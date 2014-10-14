@@ -1,0 +1,71 @@
+[
+
+	{
+	    "stack": "startstack",
+	    "stackid": 1,
+	    "description": "test stack",
+
+	    "creator": {
+	        "username": "Andy",
+	        "userid": 2
+	        },
+
+	    "createdate": "2014-10-14 10:15:03",
+	    "version": 1,
+	    "copyof": 0,
+
+	    
+	    "tags": [
+	        "learning",
+	        "tiles"
+	    ],
+
+	    "authors": [
+	        {
+	            "username": "Andy",
+	            "userid": 2
+	        },
+	        {
+	            "username": "Raymond",
+	            "userid": 1
+	        }
+
+	    ]			
+	},
+
+	{
+		"stack" : "qrstack",
+		"stackid": 2,
+
+	    "description": "qr stack",
+
+	    "creator": {
+	        "username": "Andy",
+	        "userid": 2
+	        },
+
+	    "createdate": "2014-10-14 10:17:03",
+	    "version": 1,
+	    "copyof": 0,
+
+	    
+	    "tags": [
+	        "qrcode",
+	        "tiles"
+	    ],
+
+	    "authors": [
+	        {
+	            "username": "Andy",
+	            "userid": 2
+	        },
+	        {
+	            "username": "Raymond",
+	            "userid": 1
+	        }
+
+	    ]
+
+	}
+
+]
