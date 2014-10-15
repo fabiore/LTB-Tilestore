@@ -1,0 +1,35 @@
+<div class="container-tiles" fade-in>
+    <div class="btn-group btn-group-justified" style="height:200px">
+        <a class="btn btn-default" href="#/my-tyles">
+            <h2>My Tiles</h2>
+        </a>
+        <a class="btn btn-default" href="#/my-stacks">
+            <h2>My Stacks</h2>
+        </a>
+    </div>
+    <div class="btn-group btn-group-justified" style="height:200px">
+        <a class="btn btn-default" href="#/tile-store">
+            <h2>Tile Store</h2>
+        </a>
+    </div>
+</div>
+
+<!-- Notifications 
+<div class="col-md6" style="padding-top:5px; padding-bottom:0px;">
+                <h1>
+                    My Tiles
+                </h1>
+        </div>
+        <div class="col-md6" style="padding-top:5px; padding-bottom:0px;">
+                <h1>
+                    My Stacks
+                </h1>
+        </div>
+        <div class="col-md12 jumbotron" style="padding-top:5px; padding-bottom:0px;">
+            <div style="padding-bottom: 1em;" class="pull-right">
+            </div>
+                <img ng-src="resources/logo_LTB.png" width="80px" height="80px">
+                <h1>Tile Store</h1>
+        </div>
+-->
+<div noty ng-repeat="n in notifications"/>

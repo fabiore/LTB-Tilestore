@@ -1,0 +1,40 @@
+<div class="container" fade-in>
+
+
+    <div style="padding-top: 2em;">
+
+        <div class="jumbotron" style="padding-top:5px; padding-bottom:0px;">
+
+            <div style="padding-bottom: 1em;" class="pull-right">
+                
+            </div>
+
+            <div class="page-header">
+                <h1>
+                    <img ng-src="resources/logo_LTB.png" width="80px" height="80px">
+                    Stack Details
+                </h1>
+            </div>
+            
+        </div>
+        <div class="jumbotron" style="padding-top:10px;  padding-left:10px; padding-bottom:10px;" >
+            <h3> {{stack_info.stack}} </h3>
+            <h4> Version: {{stack_info.version}} </h4>
+            <h4> Owner: {{stack_info.creator.username}} </h4>
+            <h4> Description: {{stack_info.description}} </h4>
+            <h4> Date created: {{stack_info.createdate}} </h4>
+            <h4 class="col-md-1">Tags: </h4>
+            <div ng-repeat="tag in stack_info.tags">
+                <h4> {{tag}} </h4>
+            </div>
+        </div>
+        <h3>Preview: </h3>
+        <div class="tiles content content-responsive">
+            <div class="inner" id="renderTiles">
+        </div>
+    </div>
+
+</div>
+
+<!-- Notifications -->
+<div noty ng-repeat="n in notifications"/>

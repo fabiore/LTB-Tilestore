@@ -1,0 +1,45 @@
+<div class="container" fade-in>
+
+
+    <div style="padding-top: 2em;" ng- ="tileStore">
+
+        <div class="jumbotron" style="padding-top:5px; padding-bottom:0px;">
+
+            <div style="padding-bottom: 1em;" class="pull-right">
+                
+            </div>
+
+            <div class="page-header">
+                <h1>
+                    <img ng-src="resources/logo_LTB.png" width="80px" height="80px">
+                    Welcome to Tile Store
+                </h1>
+            </div>
+            
+            
+        </div>
+        <div ng-controller="SearchController" class="col-lg-12">
+            <div class="input-group" style="padding-bottom:10px">
+              <input type="text" class="form-control" ng-model='text_to_search'>
+              <span class="input-group-btn">
+                  <a class="btn btn-primary" data-dismiss="modal" ng-click="setSearchText(text_to_search)" style="margin-left:0px" >
+                    <i class="glyphicon glyphicon-search glyphicon-white"></i></a>
+            </div>
+            <div class="jumbotron bigTile" ng-click="openDetailsScope(stack.stackid)" style="padding-top:10px;  padding-left:10px; padding-bottom:10px;" ng-repeat="stack in results">
+            <h3> {{stack.stack}} </h3>
+            <h4> Version: {{stack.version}} </h4>
+            <h4> Owner: {{stack.creator.username}} </h4>
+            <h4> Description: {{stack.description}} </h4>
+            <h4> Date created: {{stack.createdate}} </h4>
+            <h4 class="col-md-1">Tags: </h4>
+            <div ng-repeat="tag in stack.tags">
+                <h4> {{tag}} </h4>
+            </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Notifications -->
+<div noty ng-repeat="n in notifications"/>

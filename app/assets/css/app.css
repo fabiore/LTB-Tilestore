@@ -28,3 +28,15 @@
   content: "";
   padding: 0;
 }
+
+.bigTile:link {
+    background-color: transparent;
+}
+
+.bigTile:hover {
+    background-color: #def;
+}
+
+.container-tiles{
+    padding: 30px 400px 10px 400px;
+}

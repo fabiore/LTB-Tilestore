@@ -290,7 +290,7 @@
                     "name": "Vice-President, Fern-University Hagen",
                     "html": "profile.html",
                     "typebody": 5,
-                    "img": "<img src=\"assets_ltb/img/profile/profile-1.jpg\" width=\"70px\" height=\"70px\" alt=\"\"><h4>Andy Tarracó</h4><p>Easily style icon color, size, shadow, and anything that's possible with CSS.</p>",
+                    "img": "<img src=\"resources/profile-1.jpg\" width=\"70px\" height=\"70px\" alt=\"\"><h4>Andy Tarracó</h4><p>Easily style icon color, size, shadow, and anything that's possible with CSS.</p>",
                     "number": "",
                     "position": 1
                 },
@@ -299,7 +299,7 @@
                     "name": "Business Administration",
                     "html": "profile2.html",
                     "typebody": 5,
-                    "img": "<img src=\"assets_ltb/img/profile/profile-2.jpeg\" width=\"70px\" height=\"70px\" alt=\"\"><h4> Graham Attwell</h4><p>Easily style icon color, size, shadow, and anything that's possible with CSS.</p>",
+                    "img": "<img src=\"resources/profile-2.jpeg\" width=\"70px\" height=\"70px\" alt=\"\"><h4> Graham Attwell</h4><p>Easily style icon color, size, shadow, and anything that's possible with CSS.</p>",
                     "number": "",
                     "position": 2
                 },
@@ -308,7 +308,7 @@
                     "name": "External Consultant",
                     "html": "profile3.html",
                     "typebody": 5,
-                    "img": "<img src=\"assets_ltb/img/profile/profile-3.jpg\" width=\"70px\" height=\"70px\" alt=\"\"><h4>Allison Sanders</h4><p>Easily style icon color, size, shadow, and anything that's possible with CSS.</p>",
+                    "img": "<img src=\"resources/profile-3.jpg\" width=\"70px\" height=\"70px\" alt=\"\"><h4>Allison Sanders</h4><p>Easily style icon color, size, shadow, and anything that's possible with CSS.</p>",
                     "number": "",
                     "position": 3
                 },
@@ -317,7 +317,7 @@
                     "name": "R&D Project Coordinator",
                     "html": "profile4.html",
                     "typebody": 5,
-                    "img": "<img src=\"assets_ltb/img/profile/profile-4.png\" width=\"70px\" height=\"70px\" alt=\"\"><h4>Tor-Arne Bellika</h4><p>Easily style icon color, size, shadow, and anything that's possible with CSS.</p>",
+                    "img": "<img src=\"resources/profile-4.png\" width=\"70px\" height=\"70px\" alt=\"\"><h4>Tor-Arne Bellika</h4><p>Easily style icon color, size, shadow, and anything that's possible with CSS.</p>",
                     "number": "",
                     "position": 4
                 }
@@ -328,7 +328,7 @@
             "name": "Social",
             "html": "socialmedia.html",
             "typebody": 2,
-            "img": "assets_ltb/img/social-button.png",
+            "img": "resources/social-button.png",
             "number": "12",
             "position": 3,
             "subtiles": [
@@ -536,7 +536,7 @@
             "name": "",
             "html": "home-context-ltm-mobile-crane.html",
             "typebody": 4,
-            "img": "assets_ltb/img/qr-tiles.png",
+            "img": "resources/qr-tiles.png",
             "number": "",
             "position": 8,
             "stackid": 2

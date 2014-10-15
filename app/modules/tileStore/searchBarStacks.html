@@ -1,0 +1,17 @@
+<div class="input-group" style="padding-bottom:10px">
+      <input type="text" class="form-control" ng-model='text_to_search'>
+      <span class="input-group-btn">
+          <a class="btn btn-primary" data-dismiss="modal" ng-click="searchBar.setSearchText(text_to_search)" style="margin-left:0px" >
+            <i class="glyphicon glyphicon-search glyphicon-white"></i></a>
+</div>
+<div class="jumbotron" style="padding-top:10px;  padding-left:10px; padding-bottom:10px;" ng-repeat="stack in searchBar.results">
+    <h3> {{stack.stack}} </h3>
+    <h4> Version: {{stack.version}} </h4>
+    <h4> Owner: {{stack.creator.username}} </h4>
+    <h4> Description: {{stack.description}} </h4>
+    <h4> Date created: {{stack.createdate}} </h4>
+    <h4 class="col-md-1">Tags: </h4>
+    <div ng-repeat="tag in stack.tags">
+        <h4> {{tag}} </h4>
+    </div>
+</div>
