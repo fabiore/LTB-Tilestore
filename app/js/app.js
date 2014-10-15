@@ -1,14 +1,14 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-var myApp = angular.module('myApp', [
+var LTBApp = angular.module('LTBApp', [
   'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
+  'LTBApp.view1',
+  'LTBApp.view2',
+  'LTBApp.version'
 ]);
 
-myApp.controller('SearchController',['$scope', '$http', '$location', function($scope, $http, $location){
+LTBApp.controller('SearchController',['$scope', '$http', '$location', function($scope, $http, $location){
     $scope.text_controller = '';
     $scope.results={};
     $scope.setSearchText = function(text_to_search){
@@ -24,7 +24,7 @@ myApp.controller('SearchController',['$scope', '$http', '$location', function($s
 }]);
 
 
-myApp.controller('MyStacksController', ['$scope', '$http', '$location', function($scope, $http, $location) {
+LTBApp.controller('MyStacksController', ['$scope', '$http', '$location', function($scope, $http, $location) {
     $scope.myStacks={};
     $http.get('data/data-results-a.json').success (function(data){
             $scope.myStacks=data;
@@ -35,7 +35,7 @@ myApp.controller('MyStacksController', ['$scope', '$http', '$location', function
     };
 }]);
 
-myApp.controller('EditStackController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+LTBApp.controller('EditStackController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
     $scope.stack_id = $routeParams.stack_id;
     $scope.stack_info={};
     
@@ -55,7 +55,7 @@ myApp.controller('EditStackController', ['$scope', '$http', '$routeParams', func
     }
 }]);
 
-myApp.controller('StackDetailsController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+LTBApp.controller('StackDetailsController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
     $scope.stack_id = $routeParams.stack_id;
     $scope.stack_info={};
     $scope.code_render_stack="";
@@ -110,7 +110,7 @@ myApp.controller('StackDetailsController', ['$scope', '$http', '$routeParams', f
     };
 }]);
 
-/*myApp.directive('searchhhBar', function(){
+/*LTBApp.directive('searchhhBar', function(){
     return {
         restrict:'A',
         templateUrl:"../searchBarStacks.html",
@@ -131,7 +131,7 @@ myApp.controller('StackDetailsController', ['$scope', '$http', '$routeParams', f
     };
 });*/
         
-myApp.config(['$routeProvider', function($routeProvider) {
+LTBApp.config(['$routeProvider', function($routeProvider) {
         
     $routeProvider.when('/', {
         templateUrl:'modules/home/home.html'
