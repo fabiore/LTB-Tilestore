@@ -47,6 +47,9 @@
             [
                 {
                     "tile": "tile double-down bg-red",
+                    "size": "double-down",
+                    "colour" : "red",
+                    "icon": "book",
                     "name": "Information",
                     "html": "information.html",
                     "typebody": 1,
@@ -63,7 +66,10 @@
 
 
                 {
-                    "tile": "tile bg-red",
+                    "tile": "tile bg-purple",
+                    "size": "",
+                    "colour" : "purple",
+                    "icon": "cogs",
                     "name": "Settings",
                     "html": "",
                     "typebody": 1,
@@ -73,7 +79,10 @@
                 },
                 {
                     "tile": "tile double bg-red",
-                    "name": "fa fa-envelope",
+                    "size": "double",
+                    "colour" : "red",
+                    "icon": "envelope",
+                    "name": "Send me a letter",
                     "html": "",
                     "typebody": 6,
                     "img": "<h4>engraf@bau-abc-rostrup.de</h4><p>Re: Learning Toolbox v0.5</p><p>1 April 2014 12:30PM confirmed for the project plan update meeting...</p>",
