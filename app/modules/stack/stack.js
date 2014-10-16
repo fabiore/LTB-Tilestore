@@ -1,25 +1,24 @@
 'use strict';
 
-angular.module('LTBApp.view2', ['ngRoute'])
+angular.module('LTBApp.stack', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view2', {
-    templateUrl: 'modules/view2/view2.html',
-    controller: 'View2Ctrl',
-    controllerAs: 'View2ctrl'
+  $routeProvider.when('/stack', {
+    templateUrl: 'modules/stack/stackview.html',
+    controller: 'StackController',
+    controllerAs: 'StackCtrl'
   });
 }])
 
-.controller('View2Ctrl', ["$http", "$filter", function($http, $filter) {
+.controller('StackController', ["$http", "$filter", function($http, $filter) {
    this.stack = [];
    this.screen = [];
    this.tiles = [];
-   this.test = "test";
    
-   var View2 = this;
+   var stackctr = this;
    $http.get('data/data-stack-1-temp.json').success(function(data){
-       View2.stack = data;
-       View2.getTiles();
+       stackctr.stack = data;
+       stackctr.getTiles();
    });
    
    this.getTiles = function(screen){
@@ -33,7 +32,7 @@ angular.module('LTBApp.view2', ['ngRoute'])
 .directive("stack", function() {
     return {
       restrict: "E",
-      templateUrl: "modules/view2/stack.html",
+      templateUrl: "modules/stack/stack.html",
 //      controller: function() {
 //        
 //      },
@@ -44,7 +43,7 @@ angular.module('LTBApp.view2', ['ngRoute'])
 .directive("tile", function() {
     return {
       restrict: "E",
-      templateUrl: "modules/view2/tile.html",
+      templateUrl: "modules/stack/tile.html",
 //      controller: function() {
 //        
 //      },

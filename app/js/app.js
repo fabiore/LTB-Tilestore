@@ -4,7 +4,7 @@
 var LTBApp = angular.module('LTBApp', [
   'ngRoute',
   'LTBApp.view1',
-  'LTBApp.view2',
+  'LTBApp.stack',
   'LTBApp.version'
 ]);
 
