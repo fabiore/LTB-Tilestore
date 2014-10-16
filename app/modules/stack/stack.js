@@ -8,15 +8,20 @@ angular.module('LTBApp.stack', ['ngRoute'])
     controller: 'StackController',
     controllerAs: 'StackCtrl'
   });
+  $routeProvider.when('/stack/:stackid', {
+    templateUrl: 'modules/stack/stackview.html',
+    controller: 'StackController',
+    controllerAs: 'StackCtrl'
+  });
 }])
 
-.controller('StackController', ["$http", "$filter", function($http, $filter) {
+.controller('StackController', ["$http", "$filter", "$routeParams", function($http, $filter, $routeParams) {
    this.stack = [];
    this.screen = [];
    this.tiles = [];
-   
+   var stackid = $routeParams.stackid || 1;
    var stackctr = this;
-   $http.get('data/data-stack-1-temp.json').success(function(data){
+   $http.get('data/data-stack-'+stackid+'-temp.json').success(function(data){
        stackctr.stack = data;
        stackctr.getTiles();
    });
@@ -24,8 +29,7 @@ angular.module('LTBApp.stack', ['ngRoute'])
    this.getTiles = function(screen){
        var thescreen = screen || this.stack.startscreen || 1;
        this.screen = $filter('filter')(this.stack.screens, function (s) {return s.id === thescreen;})[0];
-       this.tiles = this.screen.tiles
-       console.log(this.tiles);
+       this.tiles = this.screen.tiles;
    };
 }])
 

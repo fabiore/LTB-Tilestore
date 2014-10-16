@@ -12,16 +12,19 @@
 
 
     <div id="top-nav" class="navbar-collapse collapse">
-
+        
         <div class="nav navbar-form pull-right">
-            <div ng-show="!authService.isLoggedIn()">
-                <a href="#loginModal" role="button" class="btn btn-primary" data-toggle="modal">
-                    <i class="glyphicon glyphicon-user glyphicon-white"></i> Sign in</a>
-            </div>
-            <div ng-show="authService.isLoggedIn()">
-                <a class="btn btn-primary" ng-click="authService.logout()">
-                    <i class="glyphicon glyphicon-off glyphicon-white"></i> Sign out</a>
-            </div>
+            <span id="signinButton">
+                <span class="oidc-signin"
+                    data-callback="signinCallback"
+                    data-name="Learning Layers"
+                    data-logo="https://raw.githubusercontent.com/learning-layers/LayersToolTemplate/master/extras/logo.png"
+                    data-size="lg"
+                    data-server="http://api.learning-layers.eu/o/oauth2"
+                    data-clientid="a4fe3d06-66b7-4d18-849f-b1c3d6010d05"
+                    data-scope="openid">
+                </span>
+            </span>
         </div>
 
         <div ng-show="authService.isLoggedIn()">

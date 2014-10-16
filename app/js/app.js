@@ -132,7 +132,18 @@ LTBApp.controller('StackDetailsController', ['$scope', '$http', '$routeParams', 
 });*/
         
 LTBApp.config(['$routeProvider', function($routeProvider) {
-        
+    
+    //for openid connect callback...    
+    $routeProvider.when('/access_token=:accessToken', {
+      template: '',
+      controller: function ($location, AccessToken) {
+        var hash = $location.path().substr(1);
+        AccessToken.setTokenFromString(hash);
+        $location.path('/');
+        $location.replace();
+      }
+    });
+    
     $routeProvider.when('/', {
         templateUrl:'modules/home/home.html'
     });

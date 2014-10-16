@@ -51,5 +51,43 @@
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
+  
+  <!-- import JWS and JSRSASIGN (must) -->
+    <script type="text/javascript" src="bower_components/jsjws/jws-2.0.js"></script>
+    <script type="text/javascript" src="bower_components/jsrsasign/ext/base64.js"></script>
+    <script type="text/javascript" src="bower_components/jsrsasign/jsrsasign-latest-all-min.js"></script>
+
+    <script type="text/javascript">
+
+            // OpenID Connect Button - Step 4: implement a callback function
+            function signinCallback(result) {
+                    if(result === "success"){
+                            // at this point, developers have access to several pieces of information
+                            // relevant to OpenID Connect (see ./oidc-button.js)
+                            console.log("OpenID Connect Provider Configuration:");
+                            console.log(oidc_provider_config);
+                            console.log("OpenID Connect User Info:");
+                            console.log(oidc_userinfo);
+                            console.log("OpenID Connect ID Token:");
+                            console.log(oidc_idtoken);
+
+                            $("#status").html("Hello, " + oidc_userinfo.name + "!");
+                    } else {
+                            console.log("not signed in...");
+                            console.log(result);
+                            $("#status").html("Do I know you?!");
+                    }
+            }
+    </script>
+
+    <!--  
+    <!-- OpenID Connect Button - Step 2: add this script element right before closing </body> tag -->
+    <script type="text/javascript">
+      (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       po.src = './js/oidc-button.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     })();
+    </script>
 </body>
 </html>
