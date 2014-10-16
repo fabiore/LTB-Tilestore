@@ -13,6 +13,8 @@
     "jquery": "~1.11.x",
     "bootstrap": "~3.2.0",
     "modernizr": "~2.8.x",
-    "fontawesome": "*"
+    "fontawesome": "*",
+    "jsjws": "*",
+    "jsrsasign": "*"
   }
 }
