@@ -25,69 +25,32 @@
   
   <script src="bower_components/modernizr/modernizr.js"></script>
 </head>
-<body ng-app="LTBApp">
- 
-  
+<body>
     <!-- bootstrap navbar -->
     <div ng-include="'assets/navbar-top.html'"></div>
-
+    
     <!-- ng routes hook -->
     <div ng-view></div>
 
     <!-- footer -->
     <div ng-include="'assets/navbar-bottom.html'"></div>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="js/app.js"></script>
-  <script src="modules/view1/view1.js"></script>
-  <script src="modules/stack/stack.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
-  
-  <!-- import JWS and JSRSASIGN (must) -->
-    <script type="text/javascript" src="bower_components/jsjws/jws-2.0.js"></script>
-    <script type="text/javascript" src="bower_components/jsrsasign/ext/base64.js"></script>
-    <script type="text/javascript" src="bower_components/jsrsasign/jsrsasign-latest-all-min.js"></script>
+    <!-- In production use:
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+    -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.js"></script>
+    <script src="bower_components/oauth-ng/dist/oauth-ng.js"></script>
+    <script src="js/app.js"></script>
+    <script src="modules/view1/view1.js"></script>
+    <script src="modules/stack/stack.js"></script>
+    <script src="components/version/version.js"></script>
+    <script src="components/version/version-directive.js"></script>
+    <script src="components/version/interpolate-filter.js"></script>
 
-    <script type="text/javascript">
 
-            // OpenID Connect Button - Step 4: implement a callback function
-            function signinCallback(result) {
-                    if(result === "success"){
-                            // at this point, developers have access to several pieces of information
-                            // relevant to OpenID Connect (see ./oidc-button.js)
-                            console.log("OpenID Connect Provider Configuration:");
-                            console.log(oidc_provider_config);
-                            console.log("OpenID Connect User Info:");
-                            console.log(oidc_userinfo);
-                            console.log("OpenID Connect ID Token:");
-                            console.log(oidc_idtoken);
-
-                            $("#status").html("Hello, " + oidc_userinfo.name + "!");
-                    } else {
-                            console.log("not signed in...");
-                            console.log(result);
-                            $("#status").html("Do I know you?!");
-                    }
-            }
-    </script>
-
-    <!--  
-    <!-- OpenID Connect Button - Step 2: add this script element right before closing </body> tag -->
-    <script type="text/javascript">
-      (function() {
-       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-       po.src = './js/oidc-button.js';
-       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-     })();
-    </script>
 </body>
 </html>

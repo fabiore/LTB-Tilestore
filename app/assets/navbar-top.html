@@ -13,62 +13,18 @@
 
     <div id="top-nav" class="navbar-collapse collapse">
         
-        <div class="nav navbar-form pull-right">
-            <span id="signinButton">
-                <span class="oidc-signin"
-                    data-callback="signinCallback"
-                    data-name="Learning Layers"
-                    data-logo="https://raw.githubusercontent.com/learning-layers/LayersToolTemplate/master/extras/logo.png"
-                    data-size="lg"
-                    data-server="http://api.learning-layers.eu/o/oauth2"
-                    data-clientid="a4fe3d06-66b7-4d18-849f-b1c3d6010d05"
-                    data-scope="openid">
-                </span>
-            </span>
-        </div>
-
-        <div ng-show="authService.isLoggedIn()">
-            <ul class="nav navbar-nav pull-right">
-
-                <li ng-show="authService.isLoggedIn()" class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="glyphicon glyphicon-user glyphicon-white"></i>
-
-                        <b class="caret"></b>
-                    </a>
-
-                    <ul class="dropdown-menu">
-                        <li><a href="#/">User Profile</a></li>
-                        <li><a href="#/">Change password</a></li>
-                    </ul>
-                </li>
-
-            </ul>
-
+        <div class="nav navbar-form pull-right" >
+          <oauth
+            site="http://api.learning-layers.eu/o/oauth2"
+            client-id="a4fe3d06-66b7-4d18-849f-b1c3d6010d05"
+            redirect-uri="http://localhost:8383/LTB-Tilestore/app/"
+            profile-uri="http://api.learning-layers.eu/o/oauth2/userinfo"
+            scope="openid profile email"
+            template="components/oauth-ng-custom/button.html"
+            >
+          </oauth>
         </div>
 
     </div>
 </nav>
 
-<div class="modal" id="loginModal" fade-in>
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title">Login</h4>
-            </div>
-            <div class="modal-body">
-                <span id="login-email">Email</span>
-                <input ng-model="loginInput" type="text" placeholder="Email" name='username'>
-                <span id="login-password">Password</span>
-                <a href="#">Forgot password?</a>
-                <input ng-model="passwordInput" type="password" placeholder="Password" name='password'>
-            </div>
-            <div class="modal-footer">
-                <a class="btn btn-primary" data-dismiss="modal" ng-click="authService.login(loginInput, passwordInput)">
-                    <i
-                            class="glyphicon glyphicon-user glyphicon-white"></i>Log in</a>
-            </div>
-        </div>
-    </div>
-</div>
