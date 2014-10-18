@@ -7,7 +7,8 @@ var LTBApp = angular.module('LTBApp', [
   'LTBApp.stack',
   'LTBApp.version',
   'ngStorage',
-  'oauth'
+  'oauth',
+  'gettext'
 ]);
 
 LTBApp.controller('SearchController',['$scope', '$http', '$location', function($scope, $http, $location){
