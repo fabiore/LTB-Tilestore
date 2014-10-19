@@ -49,3 +49,23 @@ it easier to serve the files by a webserver.*
 *If you have bower update issues the following may be the case:
 The problem was that bower tried to retrieve packages through git:// protocol, which seems to be blocked at my machine.
 git config --global url."https://".insteadOf git:// solved the problem.
+
+## translations
+
+For i18n we useangular-gettext. Follow these steps to update language files.
+See: https://angular-gettext.rocketeer.be/dev-guide 
+
+### extract translation string to .pot file
+
+* Run 'grunt nggettext-extract' to update po/language.pot
+
+### translate strings
+
+* use poedit
+* new languages: use "new catalog from POT file"
+* existing languages: open <lang>.po in poedit, use "update from POT file"
+* save <lang>.po
+
+### compile translations
+
+* run 'grunt nggettext-compile' to generate app/languages/<lang>.json files

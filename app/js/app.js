@@ -11,6 +11,17 @@ var LTBApp = angular.module('LTBApp', [
   'gettext'
 ]);
 
+LTBApp.run(function (gettextCatalog) {
+    //todo: dynamic language setting
+    //see: https://angular-gettext.rocketeer.be/dev-guide/
+    var lang = 'en';
+    
+    gettextCatalog.setCurrentLanguage(lang);
+    gettextCatalog.loadRemote("languages/" + lang + ".json");
+    gettextCatalog.debug = true;
+});
+
+
 LTBApp.controller('SearchController',['$scope', '$http', '$location', function($scope, $http, $location){
     $scope.text_controller = '';
     $scope.results={};
