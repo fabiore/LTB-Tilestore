@@ -4,13 +4,13 @@ angular.module('ltbapi', [])
 
 //settings
 .value('apisettings', {
-        apiuri: 'https://api.ltb.io'
+        apiuri: 'https://api.ltb.io/',
+        apistack: 'stack/',
+        apitile: 'tile/'
     }
 )
 
 .service('callApi', ["apisettings", "$http", "$filter", "$routeParams", function(apisettings, $http, $filter, $routeParams) {
-    
-    this.apiuri = apisettings.apiuri;
     
     this.state = {
         stack : [],
@@ -25,8 +25,10 @@ angular.module('ltbapi', [])
     this.getStack = function(stackid){
         stackid = stackid || 1;
         var stackcntr = this;
-        $http.get('data/data-stack-'+stackid+'-temp.json').success(function(data){
-            stackcntr.state.stack = data;
+        //var $api_str = 'data/data-stack-'+stackid+'-temp.json';
+        var $api_str = apisettings.apiuri + apisettings.apistack + stackid;
+        $http.get($api_str).success(function(data){
+            stackcntr.state.stack = angular.fromJson(data.raw);
             stackcntr.getTiles();
         });
     };
