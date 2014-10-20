@@ -15,22 +15,23 @@ angular.module('LTBApp.stack', ['ngRoute'])
   });
 }])
 
-.controller('StackController', ["$http", "$filter", "$routeParams", function($http, $filter, $routeParams) {
-   this.stack = [];
-   this.screen = [];
-   this.tiles = [];
-   var stackid = $routeParams.stackid || 1;
-   var stackctr = this;
-   $http.get('data/data-stack-'+stackid+'-temp.json').success(function(data){
-       stackctr.stack = data;
-       stackctr.getTiles();
-   });
-   
-   this.getTiles = function(screen){
-       var thescreen = screen || this.stack.startscreen || 1;
-       this.screen = $filter('filter')(this.stack.screens, function (s) {return s.id === thescreen;})[0];
-       this.tiles = this.screen.tiles;
-   };
+.controller('StackController', ["callApi", "$scope", "$http", "$filter", "$routeParams", function(callApi, $scope, $http, $filter, $routeParams) {
+    var stackid = $routeParams.stackid || 1;
+    callApi.getStack(stackid);
+    
+    this.state = callApi.state;
+    
+    var Stackctrl = this;
+    
+    $scope.$watch(
+        function(){ return callApi.state },
+
+        function(newVal) {
+            Stackctrl.state = newVal;
+        },
+        true
+    );
+
 }])
 
 .directive("stack", function() {

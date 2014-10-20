@@ -8,7 +8,8 @@ var LTBApp = angular.module('LTBApp', [
   'LTBApp.version',
   'ngStorage',
   'oauth',
-  'gettext'
+  'gettext',
+  'ltbapi'
 ]);
 
 LTBApp.run(function (gettextCatalog) {
