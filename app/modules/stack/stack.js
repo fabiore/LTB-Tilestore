@@ -17,6 +17,11 @@ angular.module('LTBApp.stack', ['ngRoute'])
 
 .controller('StackController', ["callApi", "$scope", "$http", "$filter", "$routeParams", function(callApi, $scope, $http, $filter, $routeParams) {
     var stackid = $routeParams.stackid || 1;
+    this.emulate = false;
+    this.setEmulate = function(newVal) {
+        emulate = newVal;
+    };
+    
     callApi.getStack(stackid);
     
     this.state = callApi.state;
@@ -37,11 +42,14 @@ angular.module('LTBApp.stack', ['ngRoute'])
 .directive("stack", function() {
     return {
       restrict: "E",
-      templateUrl: "modules/stack/stack.html",
-//      controller: function() {
-//        
-//      },
-//      controllerAs: "stack"
+      templateUrl: "modules/stack/stack.html"
+    };
+})
+
+.directive("stackemulate", function() {
+    return {
+      restrict: "E",
+      templateUrl: "modules/stack/stack_emulate.html"
     };
 })
 

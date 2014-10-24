@@ -40,3 +40,25 @@
 .container-tiles{
     padding: 30px 400px 10px 400px;
 }
+
+.emulator_iphone{
+    background-image: url(../resources/iphone_bg.png);
+}
+
+//.content_iphone {
+//    width:100px;
+//    height:439px;
+//    padding-top:100px;
+//    padding-bottom:80px;
+//    padding-left:48px;
+//    padding-right:140px;
+//}
+
+.content_iphone {
+    width:430px;
+    height:610px;
+    padding-top:149px;
+    padding-bottom:79px;
+    padding-left:48px;
+    padding-right:150px;
+}

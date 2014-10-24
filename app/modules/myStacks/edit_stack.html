@@ -11,45 +11,84 @@
 
             <div class="page-header">
                 <h1>
-                    <img ng-src="resources/logo_LTB.png" width="80px" height="80px">
-                    Edit: {{stack_info.stack}}!
+                    <img ng-src="assets/resources/logo_LTB.png" width="80px" height="80px">
+                    Edit {{stack_info.stack}}
                 </h1>
             </div>
         </div>
+        
         <div class="row">
 
-                <div class="panel panel-default col-md-4" style="padding:0 0 0 0">
-                    <div class="panel-heading">Tiles:</div>
+            <div class="panel panel-default col-md-2" style="padding:0 0 0 0">
+                <div class="panel-heading"><h4>Tiles:</h4></div>
 
-                    <ul class="list-group">
-                        <li class="list-group-item">Gallery</li>
-                        <li class="list-group-item">QrTile</li>
-                        <li class="list-group-item">Forum</li>
-                        <li class="list-group-item">Camera</li>
-                        <li class="list-group-item">Suggestions</li>
-                        <li class="list-group-item">Folder Explorer</li>
-                        <li class="list-group-item">Tile with Tiles</li>
-                    </ul>
-                </div>
-                <div class="col-xs-6 col-md-4">
-                    <a>
-                       <img src="assets/resources/iphone_bg.png" alt="..."> 
-                    </a>
-                </div>
-                <div class="panel panel-default col-md-4" style="padding:0 0 0 0">
-                    <div class="panel-heading">Settings:</div>
-
-                    <ul class="list-group">
-                        <li class="list-group-item">Gallery</li>
-                        <li class="list-group-item">QrTile</li>
-                        <li class="list-group-item">Forum</li>
-                        <li class="list-group-item">Camera</li>
-                        <li class="list-group-item">Suggestions</li>
-                        <li class="list-group-item">Folder Explorer</li>
-                        <li class="list-group-item">Tile with Tiles</li>
-                    </ul>
+                <ul class="list-group">
+                    <li class="list-group-item">Gallery</li>
+                    <li class="list-group-item">QrTile</li>
+                    <li class="list-group-item">Forum</li>
+                    <li class="list-group-item">Camera</li>
+                    <li class="list-group-item">Suggestions</li>
+                    <li class="list-group-item">Folder Explorer</li>
+                    <li class="list-group-item">Tile with Tiles</li>
+                </ul>
+            </div>
+            <div class="col-xs-6 col-md-4" style="padding-left:70px">
+                <div class="emulator_iphone" style="width:350px; height:639px">
+                    <!--<div class="content_iphone">
+                         <a><img ng-src="assets/resources/bbb.png" width="242px" height="430px"></a>
+                    </div>-->
+                    <div class="content_iphone">
+                        <stackemulate>loading tiles...</stackemulate>
+                    </div>
                 </div>
             </div>
+            <div class="panel panel-default col-md-5" float style="float: right; padding:0 0 0 0; margin-left: 40px">
+                <div class="panel-heading"><h4>Properties:</h4></div>
+                <div ng-controller="AccordionDemoCtrl">
+                    <accordion close-others="!oneAtATime">
+                        <accordion-group is-open="status.isFirstOpen">
+                            <accordion-heading>
+                                View <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.isFirstOpen, 'glyphicon-chevron-right': !status.isFirstOpen}"></i>
+                            </accordion-heading>
+                            <table id="nav" border="1px">
+                                <tr class="sub" tabindex="1">
+                                    <td>View</td>
+                                    <td>Bye</td></tr>
+                                <tr>
+                                    <td>Hellooooo2</td>
+                                </tr>
+                                <tr>
+                                    <td>Hellooo3</td>
+                                    <td>Bye</td>
+                                    <td>Bye</td>
+                                </tr>
+                            </table>
+                        </accordion-group>
+                        <accordion-group is-open="status.open">
+                            <accordion-heading>
+                                Settings <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                            </accordion-heading>
+                            This is just some content to illustrate fancy headings.
+                        </accordion-group>
+                    </accordion>
+                  </div>
+                
+                
+                <!--<table id="nav" border="1px">
+                    <tr class="sub" tabindex="1">
+                        <td>View</td>
+                        <td>Bye</td></tr>
+                    <tr>
+                        <td>Hellooooo2</td>
+                    </tr>
+                    <tr>
+                        <td>Hellooo3</td>
+                        <td>Bye</td>
+                        <td>Bye</td>
+                    </tr>
+                </table>-->
+            </div>
+        </div>
     </div>
 </div>
 
