@@ -1,0 +1,3 @@
+<div class="tiles-emulate tiles-emulate-black" ng-controller="StackController as stackCtrl" ng-init="stackCtrl.emulate = true">
+    <tile ng-repeat="tile in stackCtrl.state.tiles | orderBy:'position'"></tile>
+</div>
