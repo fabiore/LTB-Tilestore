@@ -15,6 +15,7 @@
     "modernizr": "~2.8.x",
     "fontawesome": "*",
     "oauth-ng": "*",
-    "angular-gettext": "*"
+    "angular-gettext": "*",
+    "angular-embedly": "*"
   }
 }
