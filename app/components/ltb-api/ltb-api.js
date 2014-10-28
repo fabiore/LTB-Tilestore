@@ -5,8 +5,9 @@ angular.module('ltbapi', [])
 //settings
 .value('apisettings', {
         apiuri: 'https://api.ltb.io/',
-        apistack: 'stack/',
-        apitile: 'tile/'
+        apistack: 'stack',
+        apitile: 'tile',
+        apiembed: 'embed'
     }
 )
 
@@ -16,7 +17,7 @@ angular.module('ltbapi', [])
         stack : [],
         screen : [],
         tiles : []
-    }
+    };
     
     this.headers = function(){
         var headers = {};
@@ -34,7 +35,7 @@ angular.module('ltbapi', [])
         if(fail){
             promise.fail(fail);
         }
-    }
+    };
 
     //Stack collection
     this.getStacks = function(){
@@ -43,14 +44,14 @@ angular.module('ltbapi', [])
         this.send(apisettings.apistack, function(data){
             console.log(angular.fromJson(data.raw));
         });
-    }
+    };
     
     //Stack Entity
     this.getStack = function(stackid){
         stackid = stackid || 1;
         var stackcntr = this;
         
-        this.send(apisettings.apistack + stackid, function(data){
+        this.send(apisettings.apistack + "/"+ stackid, function(data){
             stackcntr.state.stack = angular.fromJson(data.raw);
             stackcntr.getTiles();
         });
@@ -64,5 +65,18 @@ angular.module('ltbapi', [])
     
     this.putStack = function(stack, stackid){
         //todo save stack to API
-    }
+    };
+    
+    //Embed, usage: callApi.getEmbed('https://www.youtube.com/watch?v=bHEG6b91dG8', 200, null);
+    this.getEmbed = function(url, width, height, success, fail){
+        width = width || '';
+        height = height || '';
+        var apisrv = this;
+        
+        success = success || function(data){console.log(data);};
+        fail = fail || function(data){console.log(data);};
+        
+        var urlstr = "?url="+encodeURIComponent(url)+"&width="+width+"&height="+height;
+        this.send(apisettings.apiembed+urlstr, success, fail);
+    };
 }]);
