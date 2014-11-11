@@ -39,7 +39,7 @@
             "name": "Information",
             "html": "information.html",
             "typebody": 1,
-            "img": "fa fa-book",
+            "icon": "book",
             "number": "46",
             "position": 1,
             "subtiles": [
@@ -335,7 +335,7 @@
             "name": "My Network",
             "html": "friends-list.html",
             "typebody": 1,
-            "img": "fa fa-group",
+            "icon": "group",
             "number": "4",
             "position": 2,
             "subtiles": [
@@ -384,7 +384,7 @@
             "name": "Social",
             "html": "socialmedia.html",
             "typebody": 2,
-            "img": "resources/social-button.png",
+            "icon": "facebook",
             "number": "12",
             "position": 3,
             "subtiles": [
@@ -433,7 +433,7 @@
             "name": "Profile",
             "html": "profile0.html",
             "typebody": 1,
-            "img": "fa fa-user",
+            "icon": "user",
             "number": "",
             "position": 4
         }

@@ -233,3 +233,12 @@
 .tile-emulate-purple .font-purple {
   color: #8e44ad !important;
 }
+
+#scrollArea {
+  overflow: auto;
+}
+
+#bottom {
+  display: block;
+  margin-top: 2000px;
+}

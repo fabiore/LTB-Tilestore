@@ -4,8 +4,8 @@ var App = angular.module('drag-and-drop', ['ngRoute']);
 
 App.config(['$routeProvider', function($routeProvider) {  
     $routeProvider.when('/my-stacks', {
-        templateUrl:'modules/myStacks/edit_stack.html',
-        controller:'StackController'
+        templateUrl:'modules/myStacks/my_stacks.html',
+        controller:'MyStacksController'
     });
 }]);
 

@@ -3,60 +3,77 @@
 angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/stack', {
-    templateUrl: 'modules/stack/stackview.html',
+  $routeProvider.when('/stack_edit', {
+    templateUrl: 'modules/myStacks/edit_stack.html',
     controller: 'StackController',
-    controllerAs: 'StackCtrl'
+    controllerAs: 'StackController'
   });
-  $routeProvider.when('/stack/:stackid', {
-    templateUrl: 'modules/stack/stackview.html',
+  $routeProvider.when('/stack_edit/:stackid', {
+    templateUrl: 'modules/myStacks/edit_stack.html',
     controller: 'StackController',
-    controllerAs: 'StackCtrl'
+    controllerAs: 'StackController'
   });
 }])
 
 .controller('StackController', ["callApi", "$scope","$http", "$filter", "$routeParams", function(callApi, $scope, $http, $filter, $routeParams) {
+    $scope.template_tiles = {};//[{'title': 'Gallery'},{'title': 'QrTile'},{'title': 'Forum'},{'title': 'Camera'},{'title': 'Suggestions'},{'title': 'Folder Explorer'},{'title': 'Tile with Tiles'}];
+    $http.get('data/template-tiles.json').success(function(data){
+        $scope.template_tiles = data.edit_tiles;
+    });
+    
     var stackid = $routeParams.stackid || 1;
     this.emulate = false;
+    
     this.setEmulate = function(newVal) {
         emulate = newVal;
     };
-     $scope.stack_info={};
-    //callApi.getStack(stackid);
     
-    //this.state = callApi.state;
+    $scope.stack_info={};    
     $scope.stack = this;
     $scope.tiles = {};
-    $scope.stack_info={};
+
     $http.get('data/data-stack-1.json').success(function(data){
-        //$scope.stack.state = data;
         $scope.tiles = data.tiles;
         $scope.stack_info = data;
     });
     
-    //$scope.$watch(
-    //    function(){ return callApi.state },
-
-    //    function(newVal) {
-    //        Stackctrl.state = newVal;
-    //    },
-    //    true
-    //);
     
-    $scope.list5 = [{'title': 'Gallery'},{'title': 'QrTile'},{'title': 'Forum'},{'title': 'Camera'},{'title': 'Suggestions'},{'title': 'Folder Explorer'},{'title': 'Tile with Tiles'}];
 
     $scope.hideMe = function() {
       return $scope.list5.length > 0;
     };
 
-    $scope.dropTile = function() {
-        $scope.tiles = $scope.tiles.concat([{tile : "tile bg-blue",colour : "red",name : "Settings",html : "",typebody : 1,img : "fa fa-cogs",number : "",position: "11"}]);
-        //$scope.tiles = {};
-        //$scope.$apply(function () {
-        //    $scope.tiles = $scope.tiles.concat([{tile : "tile bg-blue",colour : "red",name : "Settings",html : "",typebody : 1,img : "fa fa-cogs",number : "",position: "11"}]);
-        //    $scope.list5 = $scope.list5.concat([{'title': 'iPhone'},{'title': 'iPod'},{'title': 'iPad'}]);
-        //});
+    $scope.startCallback = function(event, ui, title) {
+          $scope.draggedTitleID = title.id_tile;
     };
+
+    $scope.dropTile = function() {
+        console.log('You drop: ' + $scope.draggedTitleID);
+        $scope.tiles = $scope.tiles.concat([{tile : "tile bg-blue",colour : "red",name : "Camera",html : "",typebody : 1,icon : "video-camera",number : "",position: "11"}]);
+        $scope.settings = getSettingsById($scope.template_tiles, $scope.draggedTitleID);
+    };
+    
+    function getSettingsById(arr, id) {
+        for (var d = 0, len = arr.length; d < len; d += 1) {
+            if (arr[d].id_tile === id) {
+                return arr[d].settings;
+            }
+        }
+    }
+    
+    //callApi.getStack(stackid);
+    
+    //this.state = callApi.state;
+    //var Stackctrl = this;
+    
+    //$scope.$watch(
+    //    function(){ return callApi.state },
+    //
+    //    function(newVal) {
+    //    Stackctrl.state = newVal;
+    //    },
+    //    true
+    //);
 }])
 
 
