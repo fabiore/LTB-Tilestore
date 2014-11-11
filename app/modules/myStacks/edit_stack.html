@@ -18,18 +18,11 @@
         </div>
         
         <div class="row">
-
             <div class="panel panel-default col-md-2" style="padding:0 0 0 0">
                 <div class="panel-heading"><h4>Tiles:</h4></div>
 
                 <ul class="list-group">
-                    <li class="list-group-item">Gallery</li>
-                    <li class="list-group-item">QrTile</li>
-                    <li class="list-group-item">Forum</li>
-                    <li class="list-group-item">Camera</li>
-                    <li class="list-group-item">Suggestions</li>
-                    <li class="list-group-item">Folder Explorer</li>
-                    <li class="list-group-item">Tile with Tiles</li>
+                    <li class="list-group-item" ng-repeat='item in list5' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="list5" jqyoui-draggable="{index: {{$index}}, placeholder: 'keep'}">{{item.title}}</li>
                 </ul>
             </div>
             <div class="col-xs-6 col-md-4" style="padding-left:70px">
@@ -37,7 +30,7 @@
                     <!--<div class="content_iphone">
                          <a><img ng-src="assets/resources/bbb.png" width="242px" height="430px"></a>
                     </div>-->
-                    <div class="content_iphone">
+                    <div class="content_iphone" data-drop="true" jqyoui-droppable="{multiple:true,onDrop: 'dropTile'}">
                         <stackemulate>loading tiles...</stackemulate>
                     </div>
                 </div>
@@ -50,17 +43,22 @@
                             <accordion-heading>
                                 View <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.isFirstOpen, 'glyphicon-chevron-right': !status.isFirstOpen}"></i>
                             </accordion-heading>
-                            <table id="nav" border="1px">
+                            <table id="nav" border="1px" width="100%">
                                 <tr class="sub" tabindex="1">
-                                    <td>Name</td>
-                                    <td>Camera</td></tr>
-                                <tr>
-                                    <td>Size</td>
-                                    <td>double</td></tr>
+                                    <td><b>Name</b></td>
+                                    <td><input style="width:100%; color:gray" type="text" name="tile_name" value="Camera"></td>
                                 </tr>
                                 <tr>
-                                    <td>Color</td>
-                                    <td>Red</td>
+                                    <td><b>Size</b></td>
+                                    <td><input style="width:100%; color:gray" type="text" name="tile_size" value="simple"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>Color</b></td>
+                                    <td><input style="width:100%; color:gray" type="text" name="tile_colour" value="Red"></td>
+                                </tr>
+                                <tr>
+                                    <td><b>Image</b></td>
+                                    <td><input style="width:100%; color:gray" type="text" name="tile_colour" value="camera"></td>
                                 </tr>
                             </table>
                         </accordion-group>
@@ -68,37 +66,22 @@
                             <accordion-heading>
                                 Settings <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
                             </accordion-heading>
-                            <table id="nav" border="1px">
+                            <table id="nav" border="1px" width="100%">
                                 <tr class="sub" tabindex="1">
-                                    <td>Function</td>
-                                    <td>Camera</td></tr>
+                                    <td><b>Acces Gallery</b></td>
+                                    <td><input style="width:100%; color:gray" type="text" name="tile_colour" value="TRUE"></td>
+                                </tr>
                                 <tr>
-                                    <td>Save Images</td>
-                                    <td>YES</td></tr>
+                                    <td><b>Save Images</b></td>
+                                    <td><input style="width:100%; color:gray" type="text" name="tile_colour" value="TRUE"></td>
                                 </tr>
                             </table>
                         </accordion-group>
                     </accordion>
                   </div>
-                
-                
-                <!--<table id="nav" border="1px">
-                    <tr class="sub" tabindex="1">
-                        <td>View</td>
-                        <td>Bye</td></tr>
-                    <tr>
-                        <td>Hellooooo2</td>
-                    </tr>
-                    <tr>
-                        <td>Hellooo3</td>
-                        <td>Bye</td>
-                        <td>Bye</td>
-                    </tr>
-                </table>-->
             </div>
         </div>
     </div>
 </div>
-
 <!-- Notifications -->
-<div noty ng-repeat="n in notifications"/>
+<div noty ng-repeat="n in notifications"> </div>
