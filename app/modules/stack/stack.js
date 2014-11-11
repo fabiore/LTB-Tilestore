@@ -50,7 +50,6 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
     };
 
     $scope.dropTile = function() {
-        $scope.list5 = $scope.list5.concat([{'title': 'iPhone'},{'title': 'iPod'},{'title': 'iPad'}]);
         $scope.tiles = $scope.tiles.concat([{tile : "tile bg-blue",colour : "red",name : "Settings",html : "",typebody : 1,img : "fa fa-cogs",number : "",position: "11"}]);
         //$scope.tiles = {};
         //$scope.$apply(function () {
