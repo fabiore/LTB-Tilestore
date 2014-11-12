@@ -44,13 +44,13 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
     };
 
     $scope.startCallback = function(event, ui, title) {
-          $scope.draggedTitleID = title.id_tile;
+          $scope.draggedTitle = title;
     };
 
     $scope.dropTile = function() {
         console.log('You drop: ' + $scope.draggedTitleID);
-        $scope.tiles = $scope.tiles.concat([{tile : "tile bg-blue",colour : "red",name : "Camera",html : "",typebody : 1,icon : "video-camera",number : "",position: "11"}]);
-        $scope.settings = getSettingsById($scope.template_tiles, $scope.draggedTitleID);
+        $scope.tiles = $scope.tiles.concat([{tile : "tile bg-blue",colour : "red",name : $scope.draggedTitle.name,html : "",typebody : 1,icon : "video-camera",number : "",position: "11"}]);
+        $scope.settings = getSettingsById($scope.template_tiles, $scope.draggedTitle.id_tile);
     };
     
     function getSettingsById(arr, id) {
