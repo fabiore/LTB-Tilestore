@@ -1,0 +1,116 @@
+{
+    "edit_tiles": [
+        {
+            "id_tile" : 1,
+            "name": "Gallery",
+            "settings" : { 
+                "view" : [
+                    "Name",
+                    "Size",
+                    "Color",
+                    "Image"
+                ],
+                "config" : [
+                    "Acces gallery",
+                    "Save Image"
+                ]
+            }
+        },
+        {
+            "id_tile" : 2,
+            "name": "QrTile",
+            "settings" : { 
+                "view" : [
+                    "Name",
+                    "Size",
+                    "Color",
+                    "Image"
+                ],
+                "config" : [
+                    "Acces gallery",
+                    "Save Image"
+                ]
+            }
+        },
+        {
+            "id_tile" : 3,
+            "name": "Forum",
+            "settings" : { 
+                "view" : [
+                    "Name",
+                    "Size",
+                    "Color",
+                    "Image"
+                ],
+                "config" : [
+                    "Acces gallery",
+                    "Save Image"
+                ]
+            }
+        },
+        {
+            "id_tile" : 4,
+            "name": "Camera",
+            "settings" : { 
+                "view" : [
+                    "Name",
+                    "Size",
+                    "Color",
+                    "Image"
+                ],
+                "config" : [
+                    "Acces gallery",
+                    "Save Image"
+                ]
+            }
+        },
+        {
+            "id_tile" : 5,
+            "name": "Suggestions",
+            "settings" : { 
+                "view" : [
+                    "Name",
+                    "Size",
+                    "Color",
+                    "Image"
+                ],
+                "config" : [
+                    "Acces gallery",
+                    "Save Image"
+                ]
+            }
+        },
+        {
+            "id_tile" : 6,
+            "name": "Folder Explore",
+            "settings" : { 
+                "view" : [
+                    "Name",
+                    "Size",
+                    "Color",
+                    "Image"
+                ],
+                "config" : [
+                    "Acces gallery",
+                    "Save Image"
+                ]
+            }
+        },
+        {
+            "id_tile" : 7,
+            "name": "Tile wit tiles",
+            "settings" : { 
+                "view" : [
+                    "Name",
+                    "Size",
+                    "Color",
+                    "Image"
+                ],
+                "config" : [
+                    "Acces gallery",
+                    "Save Image"
+                ]
+            }
+        }
+    ]
+}

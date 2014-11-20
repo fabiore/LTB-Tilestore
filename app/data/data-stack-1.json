@@ -34,15 +34,19 @@
     "tiles": [
         {
             "tile": "tile double-down bg-red",
+            "colour" : "red",
+            "size" : "double-down",
             "name": "Information",
             "html": "information.html",
             "typebody": 1,
-            "img": "fa fa-book",
+            "icon": "book",
             "number": "46",
             "position": 1,
             "subtiles": [
                 {
                     "tile": "tile double bg-red",
+                    "colour" : "red",
+                    "size" : "double",
                     "name": "Click here to search",
                     "html": "search.html",
                     "typebody": 1,
@@ -52,6 +56,8 @@
                 },
                 {
                     "tile": "tile bg-red",
+                    "colour" : "red",
+                    "size" : "",
                     "name": "Recent Searches",
                     "html": "",
                     "typebody": 1,
@@ -61,6 +67,8 @@
                 },
                 {
                     "tile": "tile bg-blue",
+                    "colour" : "blue",
+                    "size" : "",
                     "name": "Recommendations",
                     "html": "",
                     "typebody": 1,
@@ -70,6 +78,8 @@
                 },
                 {
                     "tile": "tile bg-green",
+                    "colour" : "green",
+                    "size" : "",
                     "name": "Health & Safety",
                     "html": "first-aid.html",
                     "typebody": 1,
@@ -79,6 +89,8 @@
                     "subtiles": [
                         {
                             "tile": "tile bg-purple",
+                            "colour" : "purple",
+                            "size" : "",
                             "name": "Head Injury",
                             "html": "head-injury.html",
                             "typebody": 1,
@@ -88,6 +100,8 @@
                             "subtiles": [
                                 {
                                     "tile": "tile bg-red",
+                                    "colour" : "red",
+                                    "size" : "",
                                     "name": "Back to first aid",
                                     "html": "first-aid.html",
                                     "typebody": 1,
@@ -97,6 +111,8 @@
                                     "subtiles": [
                                         {
                                             "tile": "tile bg-purple",
+                                            "colour" : "purple",
+                                            "size" : "",
                                             "name": "Head Injury",
                                             "html": "head-injury.html",
                                             "typebody": 1,
@@ -106,6 +122,8 @@
                                             "subtiles": [
                                                 {
                                                     "tile": "tile bg-red",
+                                                    "colour" : "red",
+                                                    "size" : "",
                                                     "name": "Back to first aid",
                                                     "html": "first-aid.html",
                                                     "typebody": 1,
@@ -115,6 +133,8 @@
                                                 },
                                                 {
                                                     "tile": "tile bg-red",
+                                                    "colour" : "red",
+                                                    "size" : "",
                                                     "name": "Back to Home",
                                                     "html": "index.html",
                                                     "typebody": 1,
@@ -126,6 +146,8 @@
                                         },
                                         {
                                             "tile": "tile bg-purple",
+                                            "colour" : "purple",
+                                            "size" : "",
                                             "name": "Back Injury",
                                             "html": "",
                                             "typebody": 1,
@@ -135,6 +157,8 @@
                                         },
                                         {
                                             "tile": "tile bg-purple",
+                                            "colour" : "purple",
+                                            "size" : "",
                                             "name": "Fall Injury",
                                             "html": "",
                                             "typebody": 1,
@@ -144,6 +168,8 @@
                                         },
                                         {
                                             "tile": "tile bg-purple",
+                                            "colour" : "purple",
+                                            "size" : "",
                                             "name": "Burn Injury",
                                             "html": "",
                                             "typebody": 1,
@@ -153,6 +179,8 @@
                                         },
                                         {
                                             "tile": "tile bg-purple",
+                                            "colour" : "purple",
+                                            "size" : "",
                                             "name": "Electrical Injury",
                                             "html": "",
                                             "typebody": 1,
@@ -162,6 +190,8 @@
                                         },
                                         {
                                             "tile": "tile bg-purple",
+                                            "colour" : "purple",
+                                            "size" : "",
                                             "name": "Chemical",
                                             "html": "",
                                             "typebody": 1,
@@ -171,6 +201,8 @@
                                         },
                                         {
                                             "tile": "tile bg-purple",
+                                            "colour" : "purple",
+                                            "size" : "",
                                             "name": "",
                                             "html": "",
                                             "typebody": 5,
@@ -180,6 +212,8 @@
                                         },
                                         {
                                             "tile": "tile bg-red",
+                                            "colour" : "red",
+                                            "size" : "",
                                             "name": "Get Help",
                                             "html": "dont-panic.html",
                                             "typebody": 5,
@@ -191,6 +225,8 @@
                                 },
                                 {
                                     "tile": "tile bg-red",
+                                    "colour" : "red",
+                                    "size" : "",
                                     "name": "Back to Home",
                                     "html": "index.html",
                                     "typebody": 1,
@@ -202,6 +238,8 @@
                         },
                         {
                             "tile": "tile bg-purple",
+                            "colour" : "purple",
+                            "size" : "",
                             "name": "Back Injury",
                             "html": "",
                             "typebody": 1,
@@ -211,6 +249,8 @@
                         },
                         {
                             "tile": "tile bg-purple",
+                            "colour" : "purple",
+                            "size" : "",
                             "name": "Fall Injury",
                             "html": "",
                             "typebody": 1,
@@ -220,6 +260,8 @@
                         },
                         {
                             "tile": "tile bg-purple",
+                            "colour" : "purple",
+                            "size" : "",
                             "name": "Burn Injury",
                             "html": "",
                             "typebody": 1,
@@ -229,6 +271,8 @@
                         },
                         {
                             "tile": "tile bg-purple",
+                            "colour" : "purple",
+                            "size" : "",
                             "name": "Electrical Injury",
                             "html": "",
                             "typebody": 1,
@@ -238,6 +282,8 @@
                         },
                         {
                             "tile": "tile bg-purple",
+                            "colour" : "purple",
+                            "size" : "",
                             "name": "Chemical",
                             "html": "",
                             "typebody": 1,
@@ -247,6 +293,8 @@
                         },
                         {
                             "tile": "tile bg-purple",
+                            "colour" : "purple",
+                            "size" : "",
                             "name": "",
                             "html": "",
                             "typebody": 5,
@@ -256,6 +304,8 @@
                         },
                         {
                             "tile": "tile bg-red",
+                            "colour" : "purple",
+                            "size" : "",
                             "name": "Get Help",
                             "html": "dont-panic.html",
                             "typebody": 5,
@@ -267,6 +317,8 @@
                 },
                 {
                     "tile": "tile bg-red",
+                    "colour" : "red",
+                    "size" : "",
                     "name": "Home",
                     "html": "index.html",
                     "typebody": 1,
@@ -278,10 +330,12 @@
         },
         {
             "tile": "tile bg-red",
+            "colour" : "red",
+            "size" : "",
             "name": "My Network",
             "html": "friends-list.html",
             "typebody": 1,
-            "img": "fa fa-group",
+            "icon": "group",
             "number": "4",
             "position": 2,
             "subtiles": [
@@ -325,10 +379,12 @@
         },
         {
             "tile": "tile bg-red",
+            "colour" : "red",
+            "size" : "",
             "name": "Social",
             "html": "socialmedia.html",
             "typebody": 2,
-            "img": "resources/social-button.png",
+            "icon": "facebook",
             "number": "12",
             "position": 3,
             "subtiles": [
@@ -372,333 +428,14 @@
         },
         {
             "tile": "tile bg-red",
+            "colour" : "red",
+            "size" : "",
             "name": "Profile",
             "html": "profile0.html",
             "typebody": 1,
-            "img": "fa fa-user",
+            "icon": "user",
             "number": "",
             "position": 4
-        },
-        {
-            "tile": "tile bg-red",
-            "name": "collections",
-            "html": "create.html",
-            "typebody": 1,
-            "img": "fa fa-magic",
-            "number": "",
-            "position": 5,
-            "subtiles": [
-                {
-                    "tile": "tile double bg-red",
-                    "name": "Create New",
-                    "html": "createNew.html",
-                    "typebody": 1,
-                    "img": "fa fa-briefcase",
-                    "number": "",
-                    "position": 1
-                },
-                {
-                    "tile": "tile bg-red",
-                    "name": "Home",
-                    "html": "index.html",
-                    "typebody": 1,
-                    "img": "fa fa-home",
-                    "number": "",
-                    "position": 2
-                },
-                {
-                    "tile": "tile bg-red",
-                    "name": "Recent collections",
-                    "html": "",
-                    "typebody": 1,
-                    "img": "fa fa-list",
-                    "number": "",
-                    "position": 3
-                },
-                {
-                    "tile": "tile double bg-blue",
-                    "name": "Recommendations",
-                    "html": "",
-                    "typebody": 1,
-                    "img": "fa fa-arrow-circle-o-right",
-                    "number": "",
-                    "position": 4
-                }
-            ]
-        },
-        {
-            "tile": "tile bg-red",
-            "name": "",
-            "html": "stuwa.html",
-            "typebody": 3,
-            "img": "ST&#220WA",
-            "number": "",
-            "position": 6,
-            "subtiles": [
-                {
-                    "tile": "tile double bg-red",
-                    "name": "Camera",
-                    "html": "startScan();",
-                    "typebody": 7,
-                    "img": "fa fa-camera",
-                    "number": "",
-                    "position": 1
-                },
-                {
-                    "tile": "tile double bg-red",
-                    "name": "Filterkies",
-                    "html": "options-learning.html",
-                    "typebody": 1,
-                    "img": "fa fa-cogs",
-                    "number": "",
-                    "position": 2,
-                    "subtiles": [
-                        {
-                            "tile": "tile double bg-red",
-                            "name": "Learning",
-                            "html": "swipe.html",
-                            "typebody": 1,
-                            "img": "fa fa-pencil-square-o",
-                            "number": "",
-                            "position": 1
-                        },
-                        {
-                            "tile": "tile bg-red",
-                            "name": "Graphics",
-                            "html": "",
-                            "typebody": 1,
-                            "img": "fa fa-signal",
-                            "number": "",
-                            "position": 2
-                        },
-                        {
-                            "tile": "tile bg-red",
-                            "name": "Videos",
-                            "html": "swipe-videos.html",
-                            "typebody": 1,
-                            "img": "fa fa-youtube-play",
-                            "number": "",
-                            "position": 3
-                        },
-                        {
-                            "tile": "tile double bg-red",
-                            "name": "Calculator",
-                            "html": "",
-                            "typebody": 1,
-                            "img": "fa fa-superscript",
-                            "number": "",
-                            "position": 4
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "tile": "tile bg-red",
-            "name": "Suggestions",
-            "html": "suggestions.html",
-            "typebody": 1,
-            "img": "fa fa-comment-o",
-            "number": "",
-            "position": 7,
-            "subtiles": [
-                {
-                    "tile": "tile double bg-red",
-                    "name": "Make a Suggestion",
-                    "html": "new-suggestion.html",
-                    "typebody": 1,
-                    "img": "fa fa-comment-o",
-                    "number": "",
-                    "position": 1
-                },
-                {
-                    "tile": "tile bg-red",
-                    "name": "My Suggestions",
-                    "html": "list-my-suggestions.html",
-                    "typebody": 1,
-                    "img": "fa fa-list",
-                    "number": "",
-                    "position": 2
-                },
-                {
-                    "tile": "tile bg-red",
-                    "name": "Home",
-                    "html": "index.html",
-                    "typebody": 1,
-                    "img": "fa fa-home",
-                    "number": "",
-                    "position": 3
-                }
-            ]
-        },
-        {
-            "tile": "tile image",
-            "name": "",
-            "html": "home-context-ltm-mobile-crane.html",
-            "typebody": 4,
-            "img": "resources/qr-tiles.png",
-            "number": "",
-            "position": 8,
-            "stackid": 2
-        },  
-        {
-            "tile": "tile bg-red",
-            "name": "Ach So!",
-            "html": "#basic\" data-toggle=\"modal",
-            "typebody": 1,
-            "img": "fa fa-video-camera",
-            "number": "",
-            "position": 9
-        },
-        {
-            "tile": "tile bg-red",
-            "name": "Get Help",
-            "html": "dont-panic.html",
-            "typebody": 5,
-            "img": "<br/><h1>Don't</h1><br/><h1>Panic</h1>",
-            "number": "",
-            "position": 10,
-            "subtiles": [
-                {
-                    "tile": "tile double bg-blue",
-                    "name": "First Aid",
-                    "html": "first-aid.html",
-                    "typebody": 1,
-                    "img": "fa fa-medkit",
-                    "number": "",
-                    "position": 1,
-                    "subtiles": [
-                        {
-                            "tile": "tile bg-purple",
-                            "name": "Head Injury",
-                            "html": "head-injury.html",
-                            "typebody": 1,
-                            "img": "fa fa-headphones",
-                            "number": "",
-                            "position": 1,
-                            "subtiles": [
-                                {
-                                    "tile": "tile bg-red",
-                                    "name": "Back to first aid",
-                                    "html": "first-aid.html",
-                                    "typebody": 1,
-                                    "img": "fa fa-medkit",
-                                    "number": "",
-                                    "position": 1
-                                },
-                                {
-                                    "tile": "tile bg-red",
-                                    "name": "Back to Home",
-                                    "html": "index.html",
-                                    "typebody": 1,
-                                    "img": "fa fa-home",
-                                    "number": "",
-                                    "position": 2
-                                }
-                            ]
-                        },
-                        {
-                            "tile": "tile bg-purple",
-                            "name": "Back Injury",
-                            "html": "",
-                            "typebody": 1,
-                            "img": "fa fa-exclamation",
-                            "number": "",
-                            "position": 2
-                        },
-                        {
-                            "tile": "tile bg-purple",
-                            "name": "Fall Injury",
-                            "html": "",
-                            "typebody": 1,
-                            "img": "fa fa-arrow-down",
-                            "number": "",
-                            "position": 3
-                        },
-                        {
-                            "tile": "tile bg-purple",
-                            "name": "Burn Injury",
-                            "html": "",
-                            "typebody": 1,
-                            "img": "fa fa-fire",
-                            "number": "",
-                            "position": 4
-                        },
-                        {
-                            "tile": "tile bg-purple",
-                            "name": "Electrical Injury",
-                            "html": "",
-                            "typebody": 1,
-                            "img": "fa fa-lightbulb-o",
-                            "number": "",
-                            "position": 5
-                        },
-                        {
-                            "tile": "tile bg-purple",
-                            "name": "Chemical",
-                            "html": "",
-                            "typebody": 1,
-                            "img": "fa fa-glass",
-                            "number": "",
-                            "position": 6
-                        },
-                        {
-                            "tile": "tile bg-purple",
-                            "name": "",
-                            "html": "",
-                            "typebody": 5,
-                            "img": "<br><br><h1> CPR</h1>",
-                            "number": "",
-                            "position": 7
-                        },
-                        {
-                            "tile": "tile bg-red",
-                            "name": "Get Help",
-                            "html": "dont-panic.html",
-                            "typebody": 5,
-                            "img": "<br/><h1>Don't</h1><br/><h1>Panic</h1>",
-                            "number": "",
-                            "position": 8
-                        }
-                    ]
-                },
-                {
-                    "tile": "tile bg-blue",
-                    "name": "Something Broke!",
-                    "html": "",
-                    "typebody": 1,
-                    "img": "fa fa-exclamation",
-                    "number": "",
-                    "position": 2
-                },
-                {
-                    "tile": "tile bg-red",
-                    "name": "Back to Home",
-                    "html": "index.html",
-                    "typebody": 1,
-                    "img": "fa fa-home",
-                    "number": "",
-                    "position": 3
-                }
-            ]
-        },
-        {
-            "tile": "tile bg-red",
-            "name": "Settings",
-            "html": "",
-            "typebody": 1,
-            "img": "fa fa-cogs",
-            "number": "",
-            "position": 11
-        },
-        {
-            "tile": "tile double bg-red",
-            "name": "fa fa-envelope",
-            "html": "",
-            "typebody": 6,
-            "img": "<h4>engraf@bau-abc-rostrup.de</h4><p>Re: Learning Toolbox v0.5</p><p>1 April 2014 12:30PM confirmed for the project plan update meeting...</p>",
-            "number": "14",
-            "position": 12
         }
     ]
 }
