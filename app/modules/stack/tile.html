@@ -11,13 +11,30 @@
         </div>
     </div>
 </div>
-<div ng-show="emulate" class="tile-emulate {{tile.size}} tile-emulate-{{tile.colour}}">
-    <div class="tile-emulate-body">
+<div ng-click="getSubStack(tile.position)" ng-show="emulate" class="tile-emulate {{tile.size}} tile-emulate-{{tile.colour}}">
+    <div ng-show="{{tile.typebody == '1'}}" class="tile-emulate-body">
         <i ng-show="{{tile.icon !== ''}}" class="fa fa-{{tile.icon}}"></i>
     </div>
+     <div ng-show="{{tile.typebody == '2'}}" class="tile-emulate-body">
+        <img src="{{tile.img}}" alt="" vspace="0" width="80" height="80">
+    </div>
+    <div ng-show="{{tile.typebody == '4'}}" class="tile-emulate-body">
+        <img src="{{tile.img}}" alt="">
+    </div>
+    <div ng-show="{{tile.typebody == '5'}}" class="tile-emulate-body">
+        <h2>{{tile.title}}</h2>
+    </div>
+    <div ng-show="{{tile.typebody == '6'}}" class="tile-emulate-body">
+        <h5>{{tile.title}}</h5>
+        <div style="font-size:11px">{{tile.subtitle}} </div>
+        <div style="font-size:11px">{{tile.text}}</div>
+    </div>
     <div class="tile-emulate-object">
-        <div class="name">
-            {{tile.name}}
+        <div ng-show="{{tile.typebody == '6'}}"class="name">
+            <i class="fa fa-{{tile.img}}"></i>
+        </div>
+        <div ng-show="{{tile.typebody != '6'}}" class="name">
+           {{tile.name}}
         </div>
         <div class="number">
             {{tile.number}}

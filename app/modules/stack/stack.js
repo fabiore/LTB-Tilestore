@@ -32,13 +32,11 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
     $scope.stack = this;
     $scope.tiles = {};
 
-    $http.get('data/data-stack-1.json').success(function(data){
+    $http.get('data/data-stack-2.json').success(function(data){
         $scope.tiles = data.tiles;
         $scope.stack_info = data;
     });
     
-    
-
     $scope.hideMe = function() {
       return $scope.list5.length > 0;
     };
@@ -48,7 +46,7 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
     };
 
     $scope.dropTile = function() {
-        console.log('You drop: ' + $scope.draggedTitleID);
+        //console.log('You drop: ' + $scope.draggedTitleID);
         $scope.tiles = $scope.tiles.concat([{tile : "tile bg-blue",colour : "red",name : $scope.draggedTitle.name,html : "",typebody : 1,icon : "video-camera",number : "",position: "11"}]);
         $scope.settings = getSettingsById($scope.template_tiles, $scope.draggedTitle.id_tile);
     };
@@ -60,6 +58,11 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
             }
         }
     }
+    
+    $scope.getSubStack = function(pos) {
+        if ($scope.tiles[pos-1].subtiles !== undefined)
+            $scope.tiles = $scope.tiles[pos-1].subtiles;
+    };
     
     //callApi.getStack(stackid);
     
