@@ -14,7 +14,7 @@
     <div id="top-nav" class="navbar-collapse collapse">
         
         <div class="nav navbar-form pull-right" >
-            <oauth
+<!--            <oauth
             site="http://api.learning-layers.eu/o/oauth2"
             client-id="889b4051-bdbb-40e9-8692-251a93e239c7"
             redirect-uri="https://api.ltb.io/auth"
@@ -24,16 +24,18 @@
             template="components/oauth-ng-custom/button.html"
             state=""
             >
-          </oauth>
-<!--          <oauth
-            site="http://api.learning-layers.eu/o/oauth2"
-            client-id="75d6928a-e1ef-40c5-a440-bd5c79c82a0f"
-            redirect-uri="http://localhost:8383/LTB-Tilestore/app/"
-            profile-uri="http://api.learning-layers.eu/o/oauth2/userinfo"
-            scope="openid profile email"
-            template="components/oauth-ng-custom/button.html"
-            >
           </oauth>-->
+            <oauth
+            site="http://api.learning-layers.eu/o/oauth2"
+            client-id="889b4051-bdbb-40e9-8692-251a93e239c7"
+            redirect-uri="http://localhost/LTB-API/public/auth"
+            profile-uri="http://localhost/LTB-API/public/auth/profile"
+            response-type="code"
+            scope="email openid profile"
+            template="components/oauth-ng-custom/button.html"
+            state=""
+            >
+          </oauth>
         </div>
 
     </div>
