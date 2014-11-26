@@ -14,6 +14,7 @@ angular.module('ltbapi', [])
 .service('callApi', ["AccessToken", "apisettings", "$http", "$filter", "$routeParams", function(AccessToken, apisettings, $http, $filter, $routeParams) {
     
     this.state = {
+        stackid : 0,
         stack : [],
         screen : [],
         tiles : []
@@ -27,8 +28,18 @@ angular.module('ltbapi', [])
         return headers;
     };
     
-    this.send = function(request, success, fail){
+    this.get = function(request, success, fail){
         var promise = $http.get(apisettings.apiuri + request, { headers: this.headers() });
+        if(success){
+            promise.success(success);
+        }
+        if(fail){
+            promise.fail(fail);
+        }
+    };
+    
+    this.patch = function(request, data, success, fail){
+        var promise = $http.patch(apisettings.apiuri + request, data, { headers: this.headers() });
         if(success){
             promise.success(success);
         }
@@ -41,7 +52,7 @@ angular.module('ltbapi', [])
     this.getStacks = function(){
         var stackcntr = this;
         
-        this.send(apisettings.apistack, function(data){
+        this.get(apisettings.apistack, function(data){
             console.log(angular.fromJson(data.raw));
         });
     };
@@ -51,10 +62,16 @@ angular.module('ltbapi', [])
         stackid = stackid || 1;
         var stackcntr = this;
         
-        this.send(apisettings.apistack + "/"+ stackid, function(data){
-            stackcntr.state.stack = angular.fromJson(data.raw);
+        this.get(apisettings.apistack + "/"+ stackid, function(data){
+            stackcntr.state.stack = angular.fromJson(data.details);
+            stackcntr.state.stackid = stackid;
             stackcntr.getTiles();
         });
+        
+//        $http.get('data/newdata-1.json').success(function(data){
+//            stackcntr.state.stack = angular.fromJson(data);
+//            stackcntr.getTiles();
+//        });
     };
 
     this.getTiles = function(screen){
@@ -63,8 +80,25 @@ angular.module('ltbapi', [])
         this.state.tiles = this.state.screen.tiles;
     };
     
-    this.putStack = function(stack, stackid){
-        //todo save stack to API
+    this.patchStack = function(){
+        var callApi = this;
+        angular.forEach(this.state.stack.screens, function(s, k){
+                if(s.id = callApi.state.screen.id){
+                    callApi.state.screen.tiles = callApi.state.tiles;
+                    callApi.state.stack.screens[k].tiles = callApi.state.tiles;
+                }
+            })
+            
+        
+        var stackcntr = this;
+        var stackdata = {
+            details : this.state.stack            
+        };
+        this.patch(apisettings.apistack + "/"+ this.state.stackid, stackdata, function(data){
+            stackcntr.state.stack = angular.fromJson(data.details);
+            stackcntr.getTiles();
+        });
+        
     };
     
     //Embed, usage: callApi.getEmbed('https://www.youtube.com/watch?v=bHEG6b91dG8', 200, null);
@@ -77,6 +111,6 @@ angular.module('ltbapi', [])
         fail = fail || function(data){console.log(data);};
         
         var urlstr = "?url="+encodeURIComponent(url)+"&width="+width+"&height="+height;
-        this.send(apisettings.apiembed+urlstr, success, fail);
+        this.get(apisettings.apiembed+urlstr, success, fail);
     };
 }]);

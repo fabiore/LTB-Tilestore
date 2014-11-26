@@ -1,0 +1,14 @@
+<div class="tile-emulate {{tile.size}} tile-emulate-{{tile.colour}}" ng-click="tileDefCtrl.tileClick($event)">
+<div class="corner"></div><div class="check">
+<div class="tile-body">
+    <i ng-show="{{tile.icon !== ''}}" class="fa fa-{{tile.icon}}"></i>
+</div>
+<div class="tile-object">  <!--class="tile-emulate-object"-->
+    <div class="name">
+        {{tile.name}}
+    </div>
+    <div class="number">
+        {{tile.number}}
+    </div>
+</div>
+</div>

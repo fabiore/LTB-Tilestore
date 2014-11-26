@@ -6,6 +6,7 @@ var LTBApp = angular.module('LTBApp', [
     'LTBApp.stack',
     'LTBApp.tileStore',
     'LTBApp.stack_details',
+    'LTBApp.tileTypes',
     'ltbapi',
     'drag-and-drop',
     'oauth',

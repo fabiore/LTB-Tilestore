@@ -1,7 +1,7 @@
 <div class="container" fade-in>
 
 
-    <div style="padding-top: 2em;" ng- ="tileStore">
+    <div style="padding-top: 2em;" >
 
         <div class="jumbotron" style="padding-top:5px; padding-bottom:0px;">
 
@@ -12,17 +12,17 @@
             <div class="page-header">
                 <h1>
                     <img ng-src="assets/resources/logo_LTB.png" width="80px" height="80px">
-                    Edit {{stack_info.stack}}
+                    Edit {{StackCtrl.state.stack.stack}}
                 </h1>
             </div>
         </div>
-        
-        <div class="row"  ng-controller="StackController as stackCtrl">
+        <button type="button" ng-click="StackCtrl.saveStack()">Save Stack</button>
+        <div class="row" >
             <div class="panel panel-default col-md-2" style="padding:0 0 0 0">
                 <div class="panel-heading"><h4>Tiles:</h4></div>
 
                 <ul class="list-group">
-                    <li class="list-group-item" ng-repeat='item in template_tiles' ng-show="item.name" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="template_tiles" jqyoui-draggable="{index: {{$index}}, placeholder: 'keep',onStart:'startCallback(item, $index)'}">{{item.name}}</li>
+                    <li class="list-group-item" ng-repeat='item in template_tiles' ng-show="item.name" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="template_tiles" jqyoui-draggable="{index: {{$index}}, placeholder: 'keep',onStart:'StackCtrl.startCallback(item, $index)'}">{{item.name}}</li>
                 </ul>
             </div>
             <div class="col-xs-6 col-md-4" style="padding-left:70px">
@@ -30,7 +30,7 @@
                     <!--<div class="content_iphone">
                          <a><img ng-src="assets/resources/bbb.png" width="242px" height="430px"></a>
                     </div>-->
-                    <div class="content_iphone" data-drop="true" jqyoui-droppable="{multiple:true,onDrop: 'dropTile'}">
+                    <div class="content_iphone" data-drop="true" jqyoui-droppable="{multiple:true,onDrop: 'StackCtrl.dropTile'}">
                         <stackemulate>loading tiles...</stackemulate>
                     </div>
                 </div>
@@ -43,39 +43,15 @@
                             <accordion-heading>
                                 View <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.isFirstOpen, 'glyphicon-chevron-right': !status.isFirstOpen}"></i>
                             </accordion-heading>
-                            <table id="nav" border="1px" width="100%">
-                                <tr class="sub" tabindex="1">
-                                    <td><b>Name</b></td>
-                                    <td><input style="width:100%; color:gray" type="text" name="tile_name" value="Camera"></td>
-                                </tr>
-                                <tr>
-                                    <td><b>Size</b></td>
-                                    <td><input style="width:100%; color:gray" type="text" name="tile_size" value="simple"></td>
-                                </tr>
-                                <tr>
-                                    <td><b>Color</b></td>
-                                    <td><input style="width:100%; color:gray" type="text" name="tile_colour" value="Red"></td>
-                                </tr>
-                                <tr>
-                                    <td><b>Image</b></td>
-                                    <td><input style="width:100%; color:gray" type="text" name="tile_colour" value="camera"></td>
-                                </tr>
-                            </table>
+                            <tile-prop tiletype="StackCtrl.tiletype" tile=""></tile-prop>
+                            
                         </accordion-group>
                         <accordion-group is-open="status.open">
                             <accordion-heading>
                                 Settings <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
                             </accordion-heading>
-                            <table id="nav" border="1px" width="100%">
-                                <tr class="sub" tabindex="1">
-                                    <td><b>Acces Gallery</b></td>
-                                    <td><input style="width:100%; color:gray" type="text" name="tile_colour" value="TRUE"></td>
-                                </tr>
-                                <tr>
-                                    <td><b>Save Images</b></td>
-                                    <td><input style="width:100%; color:gray" type="text" name="tile_colour" value="TRUE"></td>
-                                </tr>
-                            </table>
+                            <tile-settings tiletype="default"></tile-settings>
+                            
                         </accordion-group>
                     </accordion>
                   </div>
