@@ -1,0 +1,11 @@
+<div class="tile {{tile.size}} tile-{{tile.colour}}" ng-click="TileCtrl.tileClick($event)">
+        <div class="corner"></div><div class="check">
+        <div class="tile-body">
+            <div id="tile-embed" ng-bind-html="tile.settings.htmlSafe"></div>
+        </div>
+        <div class="tile-object">  <!--class="tile-emulate-object"-->
+            <div class="name">
+                {{tile.name}}
+            </div>
+        </div>
+</div></div>

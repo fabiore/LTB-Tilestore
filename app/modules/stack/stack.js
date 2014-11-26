@@ -40,42 +40,17 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
     this.setEmulate = function(newVal) {
         this.emulate = newVal;
     };
-//    
-//    $scope.stack_info={};    
-//    $scope.stack = this;
-//    $scope.tiles = {};
-//
-//    $http.get('data/data-stack-2.json').success(function(data){
-//        $scope.tiles = data.tiles;
-//        $scope.stack_info = data;
-//    });
-//    
-//    $scope.hideMe = function() {
-//      return $scope.list5.length > 0;
-//    };
-//
+
     this.startCallback = function(event, ui, title) {
           Stackctrl.draggedTitle = title;
     };
 
     this.dropTile = function() {
         //console.log('You drop: ' + $scope.draggedTitleID);
-        Stackctrl.state.tiles = Stackctrl.state.tiles.concat([{tile : "tile bg-blue",colour : "red",name : Stackctrl.draggedTitle.name,html : "",typebody : 1,icon : "video-camera",number : "",position: "11"}]);
+        Stackctrl.state.tiles = Stackctrl.state.tiles.concat([{type: 'default', tile : "tile bg-blue",colour : "red",name : Stackctrl.draggedTitle.name,html : "",typebody : 1,icon : "video-camera",number : "",position: "11"}]);
        // $scope.settings = getSettingsById($scope.template_tiles, $scope.draggedTitle.id_tile);
     };
-//    
-//    function getSettingsById(arr, id) {
-//        for (var d = 0, len = arr.length; d < len; d += 1) {
-//            if (arr[d].id_tile === id) {
-//                return arr[d].settings;
-//            }
-//        }
-//    }
-//    
-//    $scope.getSubStack = function(pos) {
-//        if ($scope.tiles[pos-1].subtiles !== undefined)
-//            $scope.tiles = $scope.tiles[pos-1].subtiles;
-//    };
+
     
     callApi.getStack(stackid);
     
@@ -96,26 +71,6 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
     }
 }])
 
-
-.controller('AccordionDemoCtrl', function ($scope) {
-  $scope.oneAtATime = true;
-
-  $scope.groups = [
-    {
-      title: 'Dynamic Group Header - 1',
-      content: 'Dynamic Group Body - 1'
-    },
-    {
-      title: 'Dynamic Group Header - 2',
-      content: 'Dynamic Group Body - 2'
-    }
-  ];
-
-$scope.status = {
-    isFirstOpen: true,
-    isFirstDisabled: false
-  };
-})
 
 .directive("stack", function() {
     return {

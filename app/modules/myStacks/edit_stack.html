@@ -36,24 +36,26 @@
                 </div>
             </div>
             <div class="panel panel-default col-md-5" float style="float: right; padding:0 0 0 0; margin-left: 40px">
-                <div class="panel-heading"><h4>Properties:</h4></div>
-                <div ng-controller="AccordionDemoCtrl">
-                    <accordion close-others="!oneAtATime">
-                        <accordion-group is-open="status.isFirstOpen">
-                            <accordion-heading>
-                                View <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.isFirstOpen, 'glyphicon-chevron-right': !status.isFirstOpen}"></i>
-                            </accordion-heading>
-                            <tile-prop tiletype="StackCtrl.tiletype" tile=""></tile-prop>
-                            
-                        </accordion-group>
-                        <accordion-group is-open="status.open">
-                            <accordion-heading>
-                                Settings <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-                            </accordion-heading>
-                            <tile-settings tiletype="default"></tile-settings>
-                            
-                        </accordion-group>
-                    </accordion>
+                <div class="panel-heading"><h4>Properties:</h4>
+                   
+                </div>
+                <div >
+                    <div class="panel panel-default">
+                    <div class="panel-heading">View</div>
+                    <div class="panel-body">
+                      <tile-prop ></tile-prop>
+                    </div>
+                  </div>
+                    <div class="panel panel-default">
+                    <div class="panel-heading">Settings</div>
+                    <div class="panel-body">
+                      <tile-settings ></tile-settings>
+                    </div>
+                  </div>
+                    
+                    
+                    
+                    
                   </div>
             </div>
         </div>

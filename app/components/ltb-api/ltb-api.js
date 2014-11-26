@@ -34,7 +34,7 @@ angular.module('ltbapi', [])
             promise.success(success);
         }
         if(fail){
-            promise.fail(fail);
+            promise.error(fail);
         }
     };
     
@@ -44,7 +44,7 @@ angular.module('ltbapi', [])
             promise.success(success);
         }
         if(fail){
-            promise.fail(fail);
+            promise.error(fail);
         }
     };
 
@@ -64,6 +64,7 @@ angular.module('ltbapi', [])
         
         this.get(apisettings.apistack + "/"+ stackid, function(data){
             stackcntr.state.stack = angular.fromJson(data.details);
+           
             stackcntr.state.stackid = stackid;
             stackcntr.getTiles();
         });
@@ -78,16 +79,17 @@ angular.module('ltbapi', [])
         var thescreen = screen || this.state.stack.startscreen || 1;
         this.state.screen = $filter('filter')(this.state.stack.screens, function (s) {return s.id === thescreen;})[0];
         this.state.tiles = this.state.screen.tiles;
+         console.log(this.state.tiles);
     };
     
     this.patchStack = function(){
         var callApi = this;
         angular.forEach(this.state.stack.screens, function(s, k){
-                if(s.id = callApi.state.screen.id){
+                if(s.id === callApi.state.screen.id){
                     callApi.state.screen.tiles = callApi.state.tiles;
                     callApi.state.stack.screens[k].tiles = callApi.state.tiles;
                 }
-            })
+            });
             
         
         var stackcntr = this;
@@ -95,8 +97,7 @@ angular.module('ltbapi', [])
             details : this.state.stack            
         };
         this.patch(apisettings.apistack + "/"+ this.state.stackid, stackdata, function(data){
-            stackcntr.state.stack = angular.fromJson(data.details);
-            stackcntr.getTiles();
+            //@todo: succesfully saved!!!
         });
         
     };
@@ -107,8 +108,8 @@ angular.module('ltbapi', [])
         height = height || '';
         var apisrv = this;
         
-        success = success || function(data){console.log(data);};
-        fail = fail || function(data){console.log(data);};
+        success = success || function(data){console.log(data);}; 
+        fail = fail || function(data){console.log(data);}; 
         
         var urlstr = "?url="+encodeURIComponent(url)+"&width="+width+"&height="+height;
         this.get(apisettings.apiembed+urlstr, success, fail);

@@ -1,7 +1,8 @@
 <div id="fake" class="fake">
-    <div id="scrollArea" class="tiles-emulate tiles-emulate-black" ng-init="emulate = true">
+    <div id="scrollArea" class="tiles tiles-black" ng-init="emulate = true">
         <div ng-repeat="tile in StackCtrl.state.tiles | orderBy:'position'">
-            <tile-default tiletype="default" tile='tile'></tile-default>
+            
+            <tile tiletype="tile.type" tile='tile'></tile>
             
         </div>
     </div>
