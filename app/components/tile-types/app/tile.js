@@ -3,23 +3,26 @@
 tileTypes
 
 .run(['tileState', function(tileState){
-//    tileState.addTemplate(
-//    {
-//        type: "app",
-//        title: "App link",
-//        description: "Link to a mobile app",
-//        template: {
-//            size: "",
-//            colour: "purple",
-//            name: "new content",
-//            icon: "android",
-//            position: 0,
-//            settings: {},
-//            type: "app"
-//        }
-//        
-//    }
-//    );
+    tileState.addTemplate(
+    {
+        size: "double",
+        colour: "purple",
+        icon: "android",
+        type: "app",
+        name: "App link",
+        description: "Link to a mobile app",
+        template: {
+            size: "",
+            colour: "purple",
+            name: "new content",
+            icon: "android",
+            position: 0,
+            settings: {},
+            type: "app"
+        }
+        
+    }
+    );
 }])
 .controller('appTileController', ['tileState', '$scope', function (tileState, $scope) {
     this.tileEdit = function ($event) {

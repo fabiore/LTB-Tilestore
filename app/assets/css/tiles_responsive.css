@@ -185,6 +185,13 @@
   line-height: 56px;
   text-align: center;
 }
+.tiles.tiletypes .tile .tile-body > i {
+  margin-top: 12px;
+  display: block;
+  font-size: 45px;
+  line-height: 45px;
+  text-align: center;
+}
 .tiles .tile .tile-body h1,
 .tiles .tile .tile-body h2,
 .tiles .tile .tile-body h3,

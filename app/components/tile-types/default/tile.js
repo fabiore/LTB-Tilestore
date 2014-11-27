@@ -3,23 +3,26 @@
 tileTypes
 
 .run(['tileState', function(tileState){
-//    tileState.addTemplate(
-//    {
-//        type: "default",
-//        title: "Content tile",
-//        description: "Supply content",
-//        template: {
-//            size: "",
-//            colour: "purple",
-//            name: "new content",
-//            icon: "file-text-o",
-//            position: 0,
-//            settings: {},
-//            type: "default"
-//        }
-//        
-//    }
-//    );
+    tileState.addTemplate(
+    {
+        size: "double",
+        colour: "purple",
+        icon: "file-text-o",
+        type: "default",
+        name: "Content tile",
+        description: "Supply content",
+        template: {
+            size: "",
+            colour: "purple",
+            name: "new content",
+            icon: "file-text-o",
+            position: 0,
+            settings: {},
+            type: "default"
+        }
+        
+    }
+    );
 }])
 .controller('defaultTileController', ['tileState', '$scope', function (tileState, $scope) {
     this.tileEdit = function ($event) {

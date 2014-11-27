@@ -4,20 +4,24 @@ tileTypes
 .run(['tileState', function(tileState){
     tileState.addTemplate(
     {
-//        type: "embed",
-//        title: "Embed",
-//        description: "Embed external content",
-//        template: {
+        size: "double",
+        colour: "red",
+        name: "Embed",
+        description: "Embed external content",
+        icon: "cogs",
+        type: "embed",
+        template: {
             size: "double",
             colour: "red",
             name: "new embed",
+            description: "",
             icon: "",
             position: 0,
             settings: {},
             type: "embed"
-        }
+          }
         
-//    }
+        }
     );
 }])
 
@@ -43,8 +47,7 @@ tileTypes
        tileState.setTile($scope.tile);
        tileState.fullscreen = true;
     };
-    
-    $scope.tile.settings.htmlSafe = $sce.trustAsHtml($scope.tile.settings.html);
+//    $scope.tile.settings.htmlSafe = $sce.trustAsHtml($scope.tile.settings.html);
     
     this.tileTemplateUrl = function(){
        return  "components/tile-types/embed/tile.html";

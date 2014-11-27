@@ -1,8 +1,10 @@
-<div class="corner"></div>
-<div class="check" ng-click="TileCtrl.tileEdit($event)"></div>
+<div class="corner" ng-show="!tiletemplate"></div>
+<div class="check"  ng-show="!tiletemplate" ng-click="TileCtrl.tileEdit($event)"></div>
 <div ng-click="TileCtrl.tileClick($event)">
-<div class="tile-body"></div>   
-<img src="{{tile.settings.thumbnail_url}}" width="100%" />
+<div class="tile-body" ng-show="tile.settings == null"> 
+   <i ng-show="{{tile.icon !== ''}}" class="fa fa-{{tile.icon}} "></i>
+</div>
+<img src="{{tile.settings.thumbnail_url}}" width="100%" ng-show="tile.settings != null" />
 
 <div class="tile-object">  <!--class="tile-emulate-object"-->
     <div class="name" title="{{tile.name}}">

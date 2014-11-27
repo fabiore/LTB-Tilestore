@@ -26,7 +26,7 @@
                 <div class="panel-heading"><h4>Tiles:</h4></div>
 
                 <div ui-sortable="StackCtrl.sortableOptions" class="tiles tiletypes" ng-model="StackCtrl.templates">
-                    <tile ng-repeat="template in StackCtrl.templates" tiletype="template.type" tile='template' tileindex="$index" class="tile {{template.size}} tile-{{template.colour}}"></tile>
+                    <tile ng-repeat="template in StackCtrl.templates" tiletype="template.type" tiletemplate="true" tile='template' tileindex="$index" class="tile {{template.size}} tile-{{template.colour}}"></tile>
                 </div>
                 
                 

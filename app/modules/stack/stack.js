@@ -27,11 +27,6 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
 
 .controller('StackController', ["callApi", "tileState", "$scope", "$http", "$filter", "$routeParams", function(callApi, tileState, $scope, $http, $filter, $routeParams) {
     
-    //@todo: synch this with folders in components/tile-types            
-    $scope.template_tiles = {};//[{'title': 'Gallery'},{'title': 'QrTile'},{'title': 'Forum'},{'title': 'Camera'},{'title': 'Suggestions'},{'title': 'Folder Explorer'},{'title': 'Tile with Tiles'}];
-    $http.get('data/template-tiles.json').success(function(data){
-        $scope.template_tiles = data.edit_tiles;
-    });
     var Stackctrl = this;
     var stackid = $routeParams.stackid || 1;
     
@@ -86,6 +81,9 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
         true
     );
     this.templates = tileState.templates;
+    this.alltemplates = this.templates.slice();
+    
+    console.log('all', this.alltemplates);
     $scope.$watch(
         function(){ return tileState.templates },
     
@@ -102,7 +100,7 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
     this.sortingLog = [];
     this.tmpList = [];
     this.sortableOptions = {
-        connectWith: ".tileset",
+        connectWith: ".worksheet",
         activate: function () {
             console.log("activate");
         },
@@ -126,7 +124,12 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
         },
         receive: function (event, ui) {
             console.log("receive");
-            console.log(ui);
+            console.log($(ui.item[0]).attr('tile'));
+            if ($(ui.sender[0]).hasClass('tiletypes')){
+                // clone the original model to restore the removed item
+                Stackctrl.templates = Stackctrl.alltemplates;
+            }
+            
         },
         remove: function () {
             console.log("remove");
@@ -147,13 +150,13 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
         },
         stop: function (e, ui) {
             console.log("stop");
-            console.log(ui);
-            if ($(e.target).hasClass('tiletypes') &&
-                ui.item.sortable.droptarget &&
-                e.target != ui.item.sortable.droptarget[0]) {
-                // clone the original model to restore the removed item
-                Stackctrl.templates = tileState.templates;
-            }
+           
+//            if ($(e.target).hasClass('tiletypes') &&
+//                ui.item.sortable.droptarget &&
+//                e.target != ui.item.sortable.droptarget[0]) {
+//                // clone the original model to restore the removed item
+//                Stackctrl.templates = tileState.templates;
+//            }
             // this callback has the changed model
             
             

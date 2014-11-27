@@ -3,23 +3,26 @@
 tileTypes
 
 .run(['tileState', function(tileState){
-//    tileState.addTemplate(
-//    {
-//        type: "navigate",
-//        title: "Navigation",
-//        description: "Navigate to screen",
-//        template: {
-//            size: "",
-//            colour: "red",
-//            name: "navigate",
-//            icon: "compass",
-//            position: 0,
-//            settings: {},
-//            type: "navigate"
-//        }
-//        
-//    }
-//    );
+    tileState.addTemplate(
+    {
+        size: "double",
+        colour: "red",
+        icon: "compass",
+        type: "navigate",
+        name: "Navigation",
+        description: "Navigate to screen",
+        template: {
+            size: "",
+            colour: "red",
+            name: "navigate",
+            icon: "compass",
+            position: 0,
+            settings: {},
+            type: "navigate"
+        }
+        
+    }
+    );
 }])
 .controller('navigateTileController', ['tileState', '$scope', function (tileState, $scope) {
     this.tileEdit = function ($event) {
