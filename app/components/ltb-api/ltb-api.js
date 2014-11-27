@@ -114,4 +114,9 @@ angular.module('ltbapi', [])
         var urlstr = "?url="+encodeURIComponent(url)+"&width="+width+"&height="+height;
         this.get(apisettings.apiembed+urlstr, success, fail);
     };
+    
+    this.deleteTile = function(tileindex){
+        console.log('tileindex', tileindex);
+        this.state.tiles.splice(tileindex, 1);
+    };
 }]);

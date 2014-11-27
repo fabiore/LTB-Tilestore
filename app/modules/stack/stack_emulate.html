@@ -1,9 +1,13 @@
 <div id="fake" class="fake">
-    <div id="scrollArea" class="tiles tiles-black" ng-init="emulate = true">
-        <div ng-repeat="tile in StackCtrl.state.tiles | orderBy:'position'">
+    <div id="scrollArea" class="tiles tiles-black" ng-show="!StackCtrl.fullscreen">
+        <div ui-sortable="StackCtrl.sortableOptions" class="tileset" ng-model="StackCtrl.state.tiles">
+
             
-            <tile tiletype="tile.type" tile='tile'></tile>
+            <tile ng-repeat="tile in StackCtrl.state.tiles" tiletype="tile.type" tile='tile' tileindex="$index" class="tile {{tile.size}} tile-{{tile.colour}}"></tile>
             
         </div>
+    </div>
+    <div id="scrollArea" class="tiles tiles-black" ng-show="StackCtrl.fullscreen">
+        <tile-full></tile-full>
     </div>
 </div>

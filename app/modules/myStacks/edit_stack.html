@@ -17,25 +17,37 @@
             </div>
         </div>
         <button type="button" ng-click="StackCtrl.saveStack()">Save Stack</button>
+        
+
         <div class="row" >
+            
+<!-- TileType Menu -->
             <div class="panel panel-default col-md-2" style="padding:0 0 0 0">
                 <div class="panel-heading"><h4>Tiles:</h4></div>
 
-                <ul class="list-group">
-                    <li class="list-group-item" ng-repeat='item in template_tiles' ng-show="item.name" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="template_tiles" jqyoui-draggable="{index: {{$index}}, placeholder: 'keep',onStart:'StackCtrl.startCallback(item, $index)'}">{{item.name}}</li>
-                </ul>
+                <div ui-sortable="StackCtrl.sortableOptions" class="tiles tiletypes" ng-model="StackCtrl.templates">
+                    <tile ng-repeat="template in StackCtrl.templates" tiletype="template.type" tile='template' tileindex="$index" class="tile {{template.size}} tile-{{template.colour}}"></tile>
+                </div>
+                
+                
+<!--                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat='item in StackCtrl.templates' ng-show="item.title" tiletype="item" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="template_tiles" jqyoui-draggable="{index: {{$index}}, placeholder: 'keep',onStart:'StackCtrl.startDrag(item, $index)'}">{{item.title}}</li>
+                </ul>-->
             </div>
+
+<!-- Editor -->
             <div class="col-xs-6 col-md-4" style="padding-left:70px">
                 <div class="emulator_iphone" style="width:350px; height:639px">
-                    <!--<div class="content_iphone">
-                         <a><img ng-src="assets/resources/bbb.png" width="242px" height="430px"></a>
-                    </div>-->
-                    <div class="content_iphone" data-drop="true" jqyoui-droppable="{multiple:true,onDrop: 'StackCtrl.dropTile'}">
+<!--                    data-drop="true" jqyoui-droppable="{multiple:true,onDrop: 'StackCtrl.dropTile'}"-->
+                    <div class="content_iphone" >
                         <stackemulate>loading tiles...</stackemulate>
                     </div>
+                    
                 </div>
             </div>
-            <div class="panel panel-default col-md-5" float style="float: right; padding:0 0 0 0; margin-left: 40px">
+
+<!-- Tile Properties -->
+            <div class="panel panel-default col-md-5" float style="float: right; padding:0 0 0 0; margin-left: 40px" ng-show="StackCtrl.edit">
                 <div class="panel-heading"><h4>Properties:</h4>
                    
                 </div>
@@ -52,7 +64,7 @@
                       <tile-settings ></tile-settings>
                     </div>
                   </div>
-                    
+<!-- End -->     
                     
                     
                     

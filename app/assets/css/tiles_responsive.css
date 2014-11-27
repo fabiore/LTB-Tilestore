@@ -54,6 +54,12 @@
   content: "";
   float: left;
 }
+.tiles .tile.tile-full {
+  width: 95% !important;
+  padding-bottom: 0px;
+  height: 1000px;
+}
+
 .tiles .tile.double {
   width: 95% !important;
 }
@@ -69,7 +75,8 @@
 .tiles .tile:active, .tiles .tile.selected {
   border-color: #ccc !important;
 }
-.tiles .tile.selected .corner:after {
+.tiles .tile.selected .corner:after,
+.tiles .tile.tile-full .corner:after{
   content: "";
   display: inline-block;
   border-left: 40px solid transparent;
@@ -84,8 +91,28 @@
   font-family: FontAwesome;
   font-size: 13px;
   content: "\f00c";
-  display: inline-block;
-  position: absolute;
+  /*display: inline-block;*/
+   position: absolute; 
+  top: 2px;
+  right: 2px;
+}
+.tiles .tile .check:after {
+  content: "";
+  font-family: FontAwesome;
+  font-size: 13px;
+  content: "\f044";
+  /*display: inline-block;*/
+   position: absolute; 
+  top: 2px;
+  right: 2px;
+}
+.tiles .tile .close:after {
+  content: "";
+  font-family: FontAwesome;
+  font-size: 13px;
+  content: "\f00d";
+  /*display: inline-block;*/
+   position: absolute; 
   top: 2px;
   right: 2px;
 }
@@ -105,11 +132,11 @@
   display: inline-block;
 }
 .tiles .tile .tile-body {
-  height: 100%;
+  /* height: 100%; */
   vertical-align: top;
   padding: 10px 10px;
   overflow: hidden;
-  position: relative;
+  position: absolute;
   font-weight: 400;
   font-size: 12px;
   color: #000000;
@@ -142,6 +169,12 @@
   margin-left: 10px;
   margin-right: 0px;
 }
+
+.tiles .tile .tile-body > .title{
+   font-weight: bold;
+    margin-bottom: 10px;
+}
+
 .tiles .tile .tile-body > .content {
   display: inline-block;
 }

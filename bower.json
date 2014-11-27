@@ -20,6 +20,7 @@
     "fontawesome": "*",
     "oauth-ng": "https://github.com/raymondelferink/oauth-ng.git#master",
     "angular-gettext": "*",
-    "angular-embedly": "*"
+    "angular-ui-sortable": "*"
+    
   }
 }

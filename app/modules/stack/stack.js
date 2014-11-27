@@ -34,20 +34,22 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
     });
     var Stackctrl = this;
     var stackid = $routeParams.stackid || 1;
-    this.emulate = false;
+    
     this.thetiletype = 'default';
     
-    this.setEmulate = function(newVal) {
-        this.emulate = newVal;
-    };
-
-    this.startCallback = function(event, ui, title) {
-          Stackctrl.draggedTitle = title;
+    this.startDrag = function(event, ui, template, index) {
+          Stackctrl.draggedTemplate = template;
     };
 
     this.dropTile = function() {
         //console.log('You drop: ' + $scope.draggedTitleID);
-        Stackctrl.state.tiles = Stackctrl.state.tiles.concat([{type: 'default', tile : "tile bg-blue",colour : "red",name : Stackctrl.draggedTitle.name,html : "",typebody : 1,icon : "video-camera",number : "",position: "11"}]);
+//        console.log(Stackctrl.state.tiles);
+//        console.log([Stackctrl.draggedTemplate]);
+//        
+        
+        Stackctrl.state.tiles = Stackctrl.state.tiles.concat([Stackctrl.draggedTemplate.template]);
+        console.log(Stackctrl.state.tiles);
+        Stackctrl.draggedTemplate = null;
        // $scope.settings = getSettingsById($scope.template_tiles, $scope.draggedTitle.id_tile);
     };
 
@@ -55,8 +57,6 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
     callApi.getStack(stackid);
     
     this.state = callApi.state;
-    
-    
     $scope.$watch(
         function(){ return callApi.state },
     
@@ -66,9 +66,106 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
         true
     );
     
+    this.fullscreen = tileState.fullscreen;
+    $scope.$watch(
+        function(){ return tileState.fullscreen },
+    
+        function(newVal) {
+            Stackctrl.fullscreen = newVal;
+        },
+        true
+    );
+    
+    this.edit = tileState.edit;
+    $scope.$watch(
+        function(){ return tileState.edit },
+    
+        function(newVal) {
+            Stackctrl.edit = newVal;
+        },
+        true
+    );
+    this.templates = tileState.templates;
+    $scope.$watch(
+        function(){ return tileState.templates },
+    
+        function(newVal) {
+            Stackctrl.templates = newVal;
+        },
+        true
+    );
+    
     this.saveStack = function(){
         callApi.patchStack();
-    }
+    };
+    
+    this.sortingLog = [];
+    this.tmpList = [];
+    this.sortableOptions = {
+        connectWith: ".tileset",
+        activate: function () {
+            console.log("activate");
+        },
+        beforeStop: function () {
+            console.log("beforeStop");
+        },
+        change: function () {
+            console.log("change");
+        },
+        create: function () {
+            console.log("create");
+        },
+        deactivate: function () {
+            console.log("deactivate");
+        },
+        out: function () {
+            console.log("out");
+        },
+        over: function () {
+            console.log("over");
+        },
+        receive: function (event, ui) {
+            console.log("receive");
+            console.log(ui);
+        },
+        remove: function () {
+            console.log("remove");
+        },
+        sort: function () {
+            console.log("sort");
+        },
+        start: function () {
+            console.log("start");
+        },
+        update: function (e, ui) {
+            console.log("update");
+
+//            var logEntry = Stackctrl.tmpList.map(function (i) {
+//                return i.value;
+//            }).join(', ');
+//            Stackctrl.sortingLog.push('Update: ' + logEntry);
+        },
+        stop: function (e, ui) {
+            console.log("stop");
+            console.log(ui);
+            if ($(e.target).hasClass('tiletypes') &&
+                ui.item.sortable.droptarget &&
+                e.target != ui.item.sortable.droptarget[0]) {
+                // clone the original model to restore the removed item
+                Stackctrl.templates = tileState.templates;
+            }
+            // this callback has the changed model
+            
+            
+//            var logEntry = Stackctrl.tmpList.map(function (i) {
+//                return i.value;
+//            }).join(', ');
+//            Stackctrl.sortingLog.push('Stop: ' + logEntry);
+//            console.log(Stackctrl.tmpList);
+//            console.log(Stackctrl.sortingLog);
+        }
+    };
+    
 }])
 
 
