@@ -24,11 +24,11 @@
 <!-- TileType Menu -->
             <div class="panel panel-default col-md-2" style="width:232px; padding:0 0 0 0">
                 <div class="panel-heading"><h4>Tiles:</h4></div>
-
+                <div class="fake">
                 <div ui-sortable="StackCtrl.sortableOptions" class="tiles tiletypes" ng-model="StackCtrl.alltemplates">
                     <tile ng-repeat="template in StackCtrl.alltemplates" tiletype="template.type" tiletemplate="true" tile='template' tileindex="$index" class="tile {{template.size}} tile-{{template.colour}}"></tile>
                 </div>
-                
+                </div>
                 
 <!--                <ul class="list-group">
                     <li class="list-group-item" ng-repeat='item in StackCtrl.templates' ng-show="item.title" tiletype="item" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="template_tiles" jqyoui-draggable="{index: {{$index}}, placeholder: 'keep',onStart:'StackCtrl.startDrag(item, $index)'}">{{item.title}}</li>

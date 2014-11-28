@@ -8,8 +8,10 @@
   /* padding: 5% 0 0 5%; */
   /* width:258px; */
   /* height:355px; */
-  height: 500px;
+height: 500px;
+width: 249px;
   overflow: scroll;
+  
 }
 
 .fake {
