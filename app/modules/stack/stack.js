@@ -124,10 +124,10 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
         },
         receive: function (event, ui) {
             console.log("receive");
-            console.log($(ui.item[0]).attr('tile'));
+            
             if ($(ui.sender[0]).hasClass('tiletypes')){
                 // clone the original model to restore the removed item
-                Stackctrl.templates = Stackctrl.alltemplates;
+              Stackctrl.templates = Stackctrl.alltemplates;
             }
             
         },

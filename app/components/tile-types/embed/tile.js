@@ -27,6 +27,11 @@ tileTypes
 
 .controller('embedTileController', ['tileState', 'callApi', '$scope', '$sce', function (tileState, callApi, $scope, $sce) {
         
+    console.log('tile', $scope.tileindex, callApi.state.tiles[$scope.tileindex]);
+    if(!$scope.tiletemplate && callApi.state.tiles[$scope.tileindex].template){
+        callApi.state.tiles[$scope.tileindex] = callApi.state.tiles[$scope.tileindex].template;
+        console.log('tiletemp', $scope.tileindex, callApi.state.tiles[$scope.tileindex]);
+    }
     this.tileEdit = function ($event) {
         
         var obj = $($event.target).closest(".tile");
