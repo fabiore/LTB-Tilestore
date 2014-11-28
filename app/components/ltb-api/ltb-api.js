@@ -5,6 +5,16 @@ angular.module('ltbapi', [])
 //settings
 .value('apisettings', {
         apiuri: 'https://api.ltb.io/',
+        authprovider: 'http://api.learning-layers.eu/o/oauth2',
+        authclientid: '889b4051-bdbb-40e9-8692-251a93e239c7',
+        apistack: 'stack',
+        apitile: 'tile',
+        apiembed: 'embed'
+    }
+).value('localsettings', {
+        apiuri: 'http://localhost/LTB-API/public/',
+        authprovider: 'http://api.learning-layers.eu/o/oauth2',
+        authclientid: '889b4051-bdbb-40e9-8692-251a93e239c7',
         apistack: 'stack',
         apitile: 'tile',
         apiembed: 'embed'
@@ -19,6 +29,11 @@ angular.module('ltbapi', [])
         screen : [],
         tiles : []
     };
+    
+//  API SETTINGS:  
+//  apisettings = global settings
+//  localsetttings = local settings
+    this.apisettings = apisettings;
     
     this.headers = function(){
         var headers = {};
