@@ -4,7 +4,7 @@ tileTypes
 .run(['tileState', function(tileState){
     tileState.addTemplate(
     {
-        size: "double",
+        size: "",
         colour: "red",
         name: "Embed",
         description: "Embed external content",
@@ -27,10 +27,10 @@ tileTypes
 
 .controller('embedTileController', ['tileState', 'callApi', '$scope', '$sce', function (tileState, callApi, $scope, $sce) {
         
-    console.log('tile', $scope.tileindex, callApi.state.tiles[$scope.tileindex]);
+    //make sure the inserted tile is not a template
     if(!$scope.tiletemplate && callApi.state.tiles[$scope.tileindex].template){
         callApi.state.tiles[$scope.tileindex] = callApi.state.tiles[$scope.tileindex].template;
-        console.log('tiletemp', $scope.tileindex, callApi.state.tiles[$scope.tileindex]);
+        $scope.tile = callApi.state.tiles[$scope.tileindex];
     }
     this.tileEdit = function ($event) {
         
@@ -61,7 +61,7 @@ tileTypes
 }])
 
 .controller('embedFullController', ['tileState', '$sce', function(tileState, $sce){
-        console.log(tileState.selectedTile);
+        
     this.tile = tileState.selectedTile;
     this.tile.settings.htmlSafe = $sce.trustAsHtml(this.tile.settings.html);
     

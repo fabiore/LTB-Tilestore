@@ -97,7 +97,6 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
         callApi.patchStack();
     };
     
-    this.sortingLog = [];
     this.tmpList = [];
     this.sortableOptions = {
         connectWith: ".worksheet",
@@ -127,7 +126,7 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
             
             if ($(ui.sender[0]).hasClass('tiletypes')){
                 // clone the original model to restore the removed item
-              Stackctrl.templates = Stackctrl.alltemplates;
+              Stackctrl.alltemplates = Stackctrl.tmpList;
             }
             
         },
@@ -139,6 +138,7 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
         },
         start: function () {
             console.log("start");
+            Stackctrl.tmpList = Stackctrl.alltemplates.slice();
         },
         update: function (e, ui) {
             console.log("update");
@@ -149,8 +149,8 @@ angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
 //            Stackctrl.sortingLog.push('Update: ' + logEntry);
         },
         stop: function (e, ui) {
-            console.log("stop");
-           
+            console.log("stop",Stackctrl.alltemplates);
+            
 //            if ($(e.target).hasClass('tiletypes') &&
 //                ui.item.sortable.droptarget &&
 //                e.target != ui.item.sortable.droptarget[0]) {

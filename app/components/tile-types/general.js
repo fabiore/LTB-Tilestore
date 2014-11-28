@@ -15,8 +15,6 @@ var tileTypes = angular.module('LTBApp.tileTypes', [])
         },
         link: function(scope, element, attrs){
             element.html('<div><ng-include src="TileCtrl.tileTemplateUrl()"/></div>').show();
-            if(!scope.tiletemplate && scope.tile.template) scope.tile = scope.tile.template;
-            console.log("in link", scope.tile);
             
             var div = element.find('div');
             div.attr('ng-controller',scope.tiletype+'TileController as TileCtrl');

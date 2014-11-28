@@ -1,3 +1,4 @@
+<div ng-controller="navigateMenuController as MSettingCtrl">    
     <div class="form-group">
         <label class="control-label">Name</label>
         <div class="input-group">
@@ -22,3 +23,5 @@
             <input type="text" ng-model="tileTCtrl.selectedTile.icon" class="form-control">            
         </div>
     </div>
+    <button type="button" ng-click="MSettingCtrl.tileDelete()">Delete</button>
+</div>
