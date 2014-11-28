@@ -68,7 +68,8 @@ angular.module('ltbapi', [])
         var stackcntr = this;
         
         this.get(apisettings.apistack, function(data){
-            console.log(angular.fromJson(data.raw));
+//            stackcntr.state.mystacks = angular.fromJson(data);
+            console.log(angular.fromJson(data));
         });
     };
     

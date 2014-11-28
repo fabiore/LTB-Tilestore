@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('LTBApp.stack', ['ngRoute','ngDragDrop','ui.bootstrap'])
+angular.module('LTBApp.stack', ['ngRoute','ui.bootstrap'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/stack', {

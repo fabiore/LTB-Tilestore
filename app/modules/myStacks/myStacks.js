@@ -1,15 +1,18 @@
 'use strict';
 
-var App = angular.module('drag-and-drop', ['ngRoute']);
-
-App.config(['$routeProvider', function($routeProvider) {  
+angular.module('LTBApp.mystacks', ['ngRoute'])
+        
+.config(['$routeProvider', function($routeProvider) {  
     $routeProvider.when('/my-stacks', {
         templateUrl:'modules/myStacks/my_stacks.html',
         controller:'MyStacksController'
     });
-}]);
+}])
 
-App.controller('MyStacksController', ['$scope', '$http', '$location', function($scope, $http, $location) {
+.controller('MyStacksController', ['callApi', '$scope', '$http', '$location', function(callApi, $scope, $http, $location) {
+    //@todo get stacks from API...                
+    //callApi.getStacks();
+    
     $scope.myStacks={};
     $http.get('data/data-results-a.json').success (function(data){
             $scope.myStacks=data;
@@ -18,8 +21,8 @@ App.controller('MyStacksController', ['$scope', '$http', '$location', function($
     $scope.openStack= function(stackid){
         $location.path("/stack_edit/"+stackid);
     };
-}]);
-
-App.controller('EditStackController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+}])
+    
+.controller('EditStackController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
 
 }]);
