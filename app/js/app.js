@@ -44,6 +44,10 @@ LTBApp.config(['$routeProvider', function($routeProvider) {
     });
 }]);
 
+LTBApp.controller('defaultController', ['callApi', function(callApi){
+   this.apisettings = callApi.apisettings;
+}]);
+
 
 
 /*LTBApp.directive('searchhhBar', function(){

@@ -13,29 +13,18 @@
 
     <div id="top-nav" class="navbar-collapse collapse">
         
-        <div class="nav navbar-form pull-right" >
+        <div class="nav navbar-form pull-right" ng-controller="defaultController as defCtrl" >
             <oauth
-            site="http://api.learning-layers.eu/o/oauth2"
-            client-id="889b4051-bdbb-40e9-8692-251a93e239c7"
-            redirect-uri="https://api.ltb.io/auth"
-            profile-uri="https://api.ltb.io/auth/profile"
+            site="{{defCtrl.apisettings.authprovider}}"
+            client-id="{{defCtrl.apisettings.authclientid}}"
+            redirect-uri="{{defCtrl.apisettings.apiuri}}auth"
+            profile-uri="{{defCtrl.apisettings.apiuri}}auth/profile"
             response-type="code"
             scope="email openid profile"
             template="components/oauth-ng-custom/button.html"
             state=""
             >
           </oauth>
-<!--            <oauth
-            site="http://api.learning-layers.eu/o/oauth2"
-            client-id="889b4051-bdbb-40e9-8692-251a93e239c7"
-            redirect-uri="http://localhost/LTB-API/public/auth"
-            profile-uri="http://localhost/LTB-API/public/auth/profile"
-            response-type="code"
-            scope="email openid profile"
-            template="components/oauth-ng-custom/button.html"
-            state=""
-            >
-          </oauth>-->
         </div>
 
     </div>
