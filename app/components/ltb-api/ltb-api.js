@@ -37,6 +37,7 @@ angular.module('ltbapi', [])
     
     this.headers = function(){
         var headers = {};
+        
         if(AccessToken.get()){
             headers = { Authorization : 'Bearer '+AccessToken.get().access_token};
         }
@@ -44,7 +45,7 @@ angular.module('ltbapi', [])
     };
     
     this.get = function(request, success, fail){
-        var promise = $http.get(apisettings.apiuri + request, { headers: this.headers() });
+        var promise = $http.get(this.apisettings.apiuri + request, { headers: this.headers() });
         if(success){
             promise.success(success);
         }
@@ -54,7 +55,9 @@ angular.module('ltbapi', [])
     };
     
     this.patch = function(request, data, success, fail){
-        var promise = $http.patch(apisettings.apiuri + request, data, { headers: this.headers() });
+        console.log(this.apisettings.apiuri + request, data, { headers: this.headers() });
+        var promise = $http.patch(this.apisettings.apiuri + request, data, { headers: this.headers() });
+        
         if(success){
             promise.success(success);
         }
@@ -67,7 +70,7 @@ angular.module('ltbapi', [])
     this.getStacks = function(){
         var stackcntr = this;
         
-        this.get(apisettings.apistack, function(data){
+        this.get(this.apisettings.apistack, function(data){
 //            stackcntr.state.mystacks = angular.fromJson(data);
             console.log(angular.fromJson(data));
         });
@@ -78,7 +81,7 @@ angular.module('ltbapi', [])
         stackid = stackid || 1;
         var stackcntr = this;
         
-        this.get(apisettings.apistack + "/"+ stackid, function(data){
+        this.get(this.apisettings.apistack + "/"+ stackid, function(data){
             stackcntr.state.stack = angular.fromJson(data.details);
            
             stackcntr.state.stackid = stackid;
@@ -112,7 +115,9 @@ angular.module('ltbapi', [])
         var stackdata = {
             details : this.state.stack            
         };
-        this.patch(apisettings.apistack + "/"+ this.state.stackid, stackdata, function(data){
+        this.patch(this.apisettings.apistack + "/"+ this.state.stackid, stackdata, function(data){
+            
+            console.log(data);
             //@todo: succesfully saved!!!
         });
         
@@ -128,7 +133,7 @@ angular.module('ltbapi', [])
         fail = fail || function(data){console.log(data);}; 
         
         var urlstr = "?url="+encodeURIComponent(url)+"&width="+width+"&height="+height;
-        this.get(apisettings.apiembed+urlstr, success, fail);
+        this.get(this.apisettings.apiembed+urlstr, success, fail);
     };
     
     this.deleteTile = function(tileindex){

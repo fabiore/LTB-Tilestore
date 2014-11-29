@@ -37,10 +37,6 @@ angular.module('LTBApp.stack', ['ngRoute','ui.bootstrap'])
     };
 
     this.dropTile = function() {
-        //console.log('You drop: ' + $scope.draggedTitleID);
-//        console.log(Stackctrl.state.tiles);
-//        console.log([Stackctrl.draggedTemplate]);
-//        
         
         Stackctrl.state.tiles = Stackctrl.state.tiles.concat([Stackctrl.draggedTemplate.template]);
         console.log(Stackctrl.state.tiles);
@@ -48,6 +44,10 @@ angular.module('LTBApp.stack', ['ngRoute','ui.bootstrap'])
        // $scope.settings = getSettingsById($scope.template_tiles, $scope.draggedTitle.id_tile);
     };
 
+    this.toScreen = function(screenid){
+        console.log(screenid);
+        callApi.getTiles(screenid);
+    };
     
     callApi.getStack(stackid);
     

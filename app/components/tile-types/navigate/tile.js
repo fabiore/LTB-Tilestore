@@ -17,7 +17,9 @@ tileTypes
             name: "navigate",
             icon: "compass",
             position: 0,
-            settings: {},
+            settings: {
+                target: 2
+            },
             type: "navigate"
         }
         
@@ -46,6 +48,11 @@ tileTypes
         }
     };
     
+        
+    this.tileClick = function ($event) {
+       callApi.getTiles($scope.tile.settings.target);
+    };
+    
     this.tileTemplateUrl = function(){
        return  "components/tile-types/navigate/tile.html";
     };
@@ -53,12 +60,26 @@ tileTypes
 }])
 
 .controller('navigateMenuController', ['callApi', 'tileState', function(callApi, tileState){
+    this.selectedTile = tileState.selectedTile;
+    this.targetscreen = tileState.selectedTile.settings.target;
+    
     this.tileDelete = function (){
         console.log('index',tileState);
         callApi.deleteTile(tileState.tileindex);
         tileState.setTile();
         
     };
+    
+    this.targetChange = function(id){
+        
+        var name = $('#'+id).find(":selected").text();
+        
+        console.log(name);
+        tileState.selectedTile.name = name;
+    }
+    
+    
+    
 }])
 
 ;

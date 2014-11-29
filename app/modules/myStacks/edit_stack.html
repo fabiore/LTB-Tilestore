@@ -37,6 +37,9 @@
 
 <!-- Editor -->
             <div class="col-xs-6 col-md-4" style="padding-left:70px">
+                
+                <button type="button" ng-repeat="screen in StackCtrl.state.stack.screens" ng-click="StackCtrl.toScreen(screen.id)">{{screen.name}}</button>
+                
                 <div class="emulator_iphone" style="width:350px; height:639px">
 <!--                    data-drop="true" jqyoui-droppable="{multiple:true,onDrop: 'StackCtrl.dropTile'}"-->
                     <div class="content_iphone" >

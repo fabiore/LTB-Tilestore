@@ -181,10 +181,10 @@ width: 249px;
   display: inline-block;
 }
 .tiles .tile .tile-body > i {
-  margin-top: 17px;
+  /* margin-top: 10px; */
   display: block;
-  font-size: 56px;
-  line-height: 56px;
+  font-size: 50px;
+  line-height: 50px;
   text-align: center;
 }
 .tiles.tiletypes .tile .tile-body > i {

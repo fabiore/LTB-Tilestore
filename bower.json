@@ -10,7 +10,6 @@
     "angular-route": "1.2.x",
     "angular-loader": "1.2.x",
     "angular-mocks": "~1.2.x",
-    "angular-dragdrop": "https://github.com/raymondelferink/angular-dragdrop.git#master",
     "angular-ui-bootstrap-bower": "*",
     "angular-resource": "1.2.x",
     "jquery": "~1.11.x",
