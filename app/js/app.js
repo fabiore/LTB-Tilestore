@@ -11,7 +11,8 @@ var LTBApp = angular.module('LTBApp', [
     'ltbapi',
     'oauth',
     'gettext',
-    'ui.sortable'
+    'ui.sortable',
+    'textAngular'
     ]);
 
 LTBApp.run(function (gettextCatalog) {

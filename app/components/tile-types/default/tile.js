@@ -17,7 +17,10 @@ tileTypes
             name: "new content",
             icon: "file-text-o",
             position: 0,
-            settings: {},
+            settings: {
+                html: '',
+                title: ''
+            },
             type: "default"
         }
         
@@ -30,20 +33,15 @@ tileTypes
         callApi.state.tiles[$scope.tileindex] = callApi.state.tiles[$scope.tileindex].template;
         $scope.tile = callApi.state.tiles[$scope.tileindex];
     }
+    
     this.tileEdit = function ($event) {
-        
-        var obj = $($event.target).closest(".tile");
-        if (obj.hasClass('selected')) {
-            obj.removeClass('selected');
-            tileState.setTile();
-        } else {
-            $(".tile.selected").removeClass('selected');
-            $($event.target).closest(".tile").addClass('selected');
-            tileState.setTile($scope.tile);
-            tileState.tileindex = $scope.tileindex;
-            tileState.edit = true;
-            
-        }
+        tileState.tileEdit($event, $scope.tile, $scope.tileindex);
+    };
+    
+    this.tileClick = function ($event) {
+       tileState.toggleSelect($event, 'off');
+       tileState.setTile($scope.tile, "full", $scope.tileindex);
+//       tileState.fullscreen = true;
     };
     
     this.tileTemplateUrl = function(){
@@ -52,13 +50,36 @@ tileTypes
 
 }])
 
+.controller('defaultFullController', ['tileState', '$sce', function(tileState, $sce){
+        
+    this.tile = tileState.selectedTile;
+    this.tile.settings.htmlSafe = $sce.trustAsHtml(this.tile.settings.html);
+    
+    this.tileClose = function ($event) {
+       tileState.setTile();
+    };
+}])
+
 .controller('defaultMenuController', ['callApi', 'tileState', function(callApi, tileState){
+    
+    this.html = angular.copy(tileState.selectedTile.settings.html);
+    this.title = tileState.selectedTile.settings.title;
+    
     this.tileDelete = function (){
         console.log('index',tileState);
         callApi.deleteTile(tileState.tileindex);
         tileState.setTile();
         
     };
+    
+    this.saveHtml = function(){
+        tileState.selectedTile.settings.html = this.html;
+    };
+    
+    this.resetHtml = function(){
+        this.html = angular.copy(tileState.selectedTile.settings.html);
+    }
+    
 }])
 
 ;

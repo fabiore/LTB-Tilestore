@@ -19,7 +19,8 @@
     "fontawesome": "*",
     "oauth-ng": "https://github.com/raymondelferink/oauth-ng.git#master",
     "angular-gettext": "*",
-    "angular-ui-sortable": "*"
+    "angular-ui-sortable": "*",
+    "textAngular": "*"
     
   }
 }

@@ -33,24 +33,13 @@ tileTypes
         $scope.tile = callApi.state.tiles[$scope.tileindex];
     }
     this.tileEdit = function ($event) {
-        
-        var obj = $($event.target).closest(".tile");
-        if (obj.hasClass('selected')) {
-            obj.removeClass('selected');
-            tileState.setTile();
-        } else {
-            $(".tile.selected").removeClass('selected');
-            $($event.target).closest(".tile").addClass('selected');
-            tileState.setTile($scope.tile);
-            tileState.tileindex = $scope.tileindex;
-            tileState.edit = true;
-            
-        }
+        tileState.tileEdit($event, $scope.tile, $scope.tileindex);
     };
     
     this.tileClick = function ($event) {
-       tileState.setTile($scope.tile);
-       tileState.fullscreen = true;
+       tileState.toggleSelect($event, 'off');
+       tileState.setTile($scope.tile, 'full', $scope.tileindex);
+//       tileState.fullscreen = true;
     };
 //    $scope.tile.settings.htmlSafe = $sce.trustAsHtml($scope.tile.settings.html);
     

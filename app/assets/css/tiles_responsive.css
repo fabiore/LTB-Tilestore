@@ -180,6 +180,12 @@ width: 249px;
 .tiles .tile .tile-body > .content {
   display: inline-block;
 }
+
+.tiles .tile .contentpage {
+  display: inline-block;
+  background-color: #fff;
+  color: #000;
+}
 .tiles .tile .tile-body > i {
   /* margin-top: 10px; */
   display: block;
