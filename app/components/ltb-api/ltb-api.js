@@ -43,15 +43,28 @@ angular.module('ltbapi', [])
         }
         return headers;
     };
-    
-    this.get = function(request, success, fail){
-        var promise = $http.get(this.apisettings.apiuri + request, { headers: this.headers() });
+    this.jsonp = function(request, success, fail){
+        var promise = $http.jsonp(request);
         if(success){
             promise.success(success);
         }
         if(fail){
             promise.error(fail);
         }
+    };
+    
+    this.rawget = function(request, success, fail, options){
+        var promise = $http.get(request, options);
+        if(success){
+            promise.success(success);
+        }
+        if(fail){
+            promise.error(fail);
+        }
+    };
+    
+    this.get = function(request, success, fail){
+        this.rawget(this.apisettings.apiuri + request, success, fail, { headers: this.headers() });
     };
     
     this.patch = function(request, data, success, fail){
