@@ -55,7 +55,7 @@ tileTypes
             $scope.tile.settings.count = $scope.tile.settings.feed.entries.length;
         });
     };
-    this.readFeed();
+    if(!$scope.tiletemplate) this.readFeed();
     
 }])
 
