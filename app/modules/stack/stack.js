@@ -179,6 +179,13 @@ angular.module('LTBApp.stack', ['ngRoute','ui.bootstrap'])
     };
 })
 
+.directive("stackplayer", function() {
+    return {
+      restrict: "E",
+      templateUrl: "modules/stack/stack_player.html"
+    };
+})
+
 .directive("stackemulate", function() {
     return {
       restrict: "E",
