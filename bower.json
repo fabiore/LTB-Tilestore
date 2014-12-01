@@ -20,7 +20,8 @@
     "oauth-ng": "https://github.com/raymondelferink/oauth-ng.git#master",
     "angular-gettext": "*",
     "angular-ui-sortable": "*",
-    "textAngular": "*"
+    "textAngular": "*",
+    "ng-device-detector": "*"
     
   }
 }

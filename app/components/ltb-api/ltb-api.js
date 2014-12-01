@@ -21,7 +21,7 @@ angular.module('ltbapi', [])
     }
 )
 
-.service('callApi', ["AccessToken", "apisettings", "$http", "$filter", "$routeParams", function(AccessToken, apisettings, $http, $filter, $routeParams) {
+.service('callApi', ["AccessToken", "apisettings", "deviceDetector","$http", "$filter", "$routeParams", function(AccessToken, apisettings, deviceDetector, $http, $filter, $routeParams) {
     
     this.state = {
         stackid : 0,
@@ -29,6 +29,13 @@ angular.module('ltbapi', [])
         screen : [],
         tiles : []
     };
+    this.device = {
+        os: deviceDetector.os,
+        browser: deviceDetector.browser,
+        device: deviceDetector.device,
+        raw: deviceDetector.raw
+    };
+    console.log(this.device);
     
 //  API SETTINGS:  
 //  apisettings = global settings
