@@ -14,12 +14,12 @@ angular.module('LTBApp.stack', ['ngRoute','ui.bootstrap'])
     controllerAs: 'StackCtrl'
   });
   $routeProvider.when('/stack_edit', {
-    templateUrl: 'modules/myStacks/edit_stack.html',
+    templateUrl: 'modules/stack/stack_edit.html',
     controller: 'StackController',
     controllerAs: 'StackCtrl'
   });
   $routeProvider.when('/stack_edit/:stackid', {
-    templateUrl: 'modules/myStacks/edit_stack.html',
+    templateUrl: 'modules/stack/stack_edit.html',
     controller: 'StackController',
     controllerAs: 'StackCtrl'
   });
