@@ -33,7 +33,8 @@ angular.module('ltbapi', [])
         os: deviceDetector.os,
         browser: deviceDetector.browser,
         device: deviceDetector.device,
-        raw: deviceDetector.raw
+        raw: deviceDetector.raw,
+        scheme: window.location.protocol || 'http'
     };
     console.log(this.device);
     
@@ -141,19 +142,6 @@ angular.module('ltbapi', [])
             //@todo: succesfully saved!!!
         });
         
-    };
-    
-    //Embed, usage: callApi.getEmbed('https://www.youtube.com/watch?v=bHEG6b91dG8', 200, null);
-    this.getEmbed = function(url, width, height, success, fail){
-        width = width || '';
-        height = height || '';
-        var apisrv = this;
-        
-        success = success || function(data){console.log(data);}; 
-        fail = fail || function(data){console.log(data);}; 
-        
-        var urlstr = "?url="+encodeURIComponent(url)+"&width="+width+"&height="+height;
-        this.get(this.apisettings.apiembed+urlstr, success, fail);
     };
     
     this.deleteTile = function(tileindex){

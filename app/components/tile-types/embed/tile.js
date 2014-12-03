@@ -52,7 +52,9 @@ tileTypes
 .controller('embedFullController', ['tileState', '$sce', function(tileState, $sce){
         
     this.tile = tileState.selectedTile;
-    this.tile.settings.htmlSafe = $sce.trustAsHtml(this.tile.settings.html);
+    
+    //@todo: remove str.replace fix below when embed api is updated to support 'scheme'
+    this.tile.settings.htmlSafe = $sce.trustAsHtml(this.tile.settings.html.replace('src=\"//cdn.embed', 'src=\"http://cdn.embed'));
     
     this.tileClose = function ($event) {
        tileState.setTile();
@@ -70,12 +72,16 @@ tileTypes
         
     };
     
-    this.findEmbed = function(){
-        callApi.getEmbed(this.url, 220, null, function(data){
-            console.log(data._embedded.embed[0]);
+    this.findEmbed = function(url, width, height, success, fail){
+        var url = this.url;
+        var width = 220;
+        var height = '';
+        
+        var urlstr = "?url="+encodeURIComponent(url)+"&width="+width+"&height="+height+'&scheme='+callApi.device.scheme;
+        
+        callApi.get(callApi.apisettings.apiembed+urlstr, function(data){
             tileState.selectedTile.settings = data._embedded.embed[0];
-            tileState.selectedTile.name = data._embedded.embed[0].title;
-            
+            tileState.selectedTile.name = data._embedded.embed[0].title;  
         });
     };
 }])
