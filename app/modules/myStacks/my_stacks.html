@@ -18,7 +18,8 @@
             
             
         </div>
-        <div class="jumbotron bigTile" style="padding-top:10px;  padding-left:10px; padding-bottom:10px;" ng-repeat="stack in myStacks" ng-click="openStack(stack.stackid)">
+        <div class="jumbotron bigTile" style="padding-top:10px;  padding-left:10px; padding-bottom:10px;" 
+             ng-repeat="stack in mySCtrl.myStacks" ng-click="mySCtrl.openStack(stack.stackid)">
             <h2> {{stack.stack}} </h2>
             <h4> Version: {{stack.version}} </h4>
             <h4> Owner: {{stack.creator.username}} </h4>
