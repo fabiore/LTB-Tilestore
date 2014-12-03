@@ -24,7 +24,9 @@ angular.module('ltbapi', [])
 .service('callApi', ["AccessToken", "apisettings", "deviceDetector","$http", "$filter", "$routeParams", function(AccessToken, apisettings, deviceDetector, $http, $filter, $routeParams) {
     
     this.state = {
+        mystacks: {},
         stackid : 0,
+        stackfields : {},
         stack : [],
         screen : [],
         tiles : []
@@ -92,8 +94,9 @@ angular.module('ltbapi', [])
         var stackcntr = this;
         
         this.get(this.apisettings.apistack, function(data){
-//            stackcntr.state.mystacks = angular.fromJson(data);
-            console.log(angular.fromJson(data));
+            stackcntr.state.mystacks = angular.fromJson(data._embedded.stacks);
+           
+            console.log(angular.fromJson(data._embedded.stacks));
         });
     };
     
@@ -103,8 +106,9 @@ angular.module('ltbapi', [])
         var stackcntr = this;
         
         this.get(this.apisettings.apistack + "/"+ stackid, function(data){
+            
             stackcntr.state.stack = angular.fromJson(data.details);
-           
+            stackcntr.state.stackfields = angular.fromJson(data);
             stackcntr.state.stackid = stackid;
             stackcntr.getTiles();
         });

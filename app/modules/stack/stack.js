@@ -6,26 +6,39 @@ angular.module('LTBApp.stack', ['ngRoute','ui.bootstrap'])
   $routeProvider.when('/stack', {
     templateUrl: 'modules/stack/stackview.html',
     controller: 'StackController',
-    controllerAs: 'StackCtrl'
+    controllerAs: 'StackCtrl',
+    resolve: {
+        title: function(Main){
+            Main.setTitle();                
+        }
+    }
   });
   $routeProvider.when('/stack/:stackid', {
     templateUrl: 'modules/stack/stackview.html',
     controller: 'StackController',
-    controllerAs: 'StackCtrl'
+    controllerAs: 'StackCtrl',
+    resolve: {
+        title: function(Main){
+            Main.setTitle();                
+        }
+    }
   });
   $routeProvider.when('/stack_edit', {
-    templateUrl: 'modules/stack/stack_edit.html',
-    controller: 'StackController',
-    controllerAs: 'StackCtrl'
+    redirectTo: '/my-stacks'
   });
   $routeProvider.when('/stack_edit/:stackid', {
     templateUrl: 'modules/stack/stack_edit.html',
     controller: 'StackController',
-    controllerAs: 'StackCtrl'
+    controllerAs: 'StackCtrl',
+    resolve: {
+        title: function(Main){
+            Main.setTitle('Edit Stack');                
+        }
+    }
   });
 }])
 
-.controller('StackController', ["callApi", "tileState", "$scope", "$http", "$filter", "$routeParams", function(callApi, tileState, $scope, $http, $filter, $routeParams) {
+.controller('StackController', ["callApi", "tileState", "Main", "$scope", "$http", "$filter", "$routeParams", function(callApi, tileState, Main, $scope, $http, $filter, $routeParams) {
     
     var Stackctrl = this;
     var stackid = $routeParams.stackid || 1;
@@ -57,6 +70,7 @@ angular.module('LTBApp.stack', ['ngRoute','ui.bootstrap'])
     
         function(newVal) {
             Stackctrl.state = newVal;
+            Main.setTitle('Edit Stack : '+Stackctrl.state.stackfields.name);
         },
         true
     );

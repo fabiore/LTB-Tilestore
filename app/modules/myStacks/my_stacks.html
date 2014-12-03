@@ -1,37 +1,18 @@
-<div class="container" fade-in>
+<div class="container" fade-in  style="padding-top: 80px;">
 
 
-    <div style="padding-top: 2em;" ng- ="tileStore">
-
-        <div class="jumbotron" style="padding-top:5px; padding-bottom:0px;">
-
-            <div style="padding-bottom: 1em;" class="pull-right">
-                
-            </div>
-
-            <div class="page-header">
-                <h1>
-                    <img ng-src="assets/resources/logo_LTB.png" width="80px" height="80px">
-                    My Stacks
-                </h1>
-            </div>
-            
-            
+    <div class="jumbotron bigTile" style="padding-top:10px;  padding-left:10px; padding-bottom:10px;" 
+         ng-repeat="stack in mySCtrl.myStacks" ng-click="mySCtrl.openStack(stack.stack_id)">
+        <h2> {{stack.name}} </h2>
+        <h4> Version: {{stack.version}} </h4>
+        <h4> Owner: {{stack.creator.username}} </h4>
+        <h4> Description: {{stack.description}} </h4>
+        <h4> Date created: {{stack.createdate}} </h4>
+        <h4 class="col-md-1">Tags: </h4>
+        <div ng-repeat="tag in stack.tags">
+            <h4> {{tag}} </h4>
         </div>
-        <div class="jumbotron bigTile" style="padding-top:10px;  padding-left:10px; padding-bottom:10px;" 
-             ng-repeat="stack in mySCtrl.myStacks" ng-click="mySCtrl.openStack(stack.stackid)">
-            <h2> {{stack.stack}} </h2>
-            <h4> Version: {{stack.version}} </h4>
-            <h4> Owner: {{stack.creator.username}} </h4>
-            <h4> Description: {{stack.description}} </h4>
-            <h4> Date created: {{stack.createdate}} </h4>
-            <h4 class="col-md-1">Tags: </h4>
-            <div ng-repeat="tag in stack.tags">
-                <h4> {{tag}} </h4>
-            </div>
-            </div>
-    </div>
-
+        </div>
 </div>
 
 <!-- Notifications -->

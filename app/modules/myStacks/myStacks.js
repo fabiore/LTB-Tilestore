@@ -6,19 +6,29 @@ angular.module('LTBApp.mystacks', ['ngRoute'])
     $routeProvider.when('/my-stacks', {
         templateUrl:'modules/myStacks/my_stacks.html',
         controller:'MyStacksController',
-        controllerAs: 'mySCtrl'
+        controllerAs: 'mySCtrl',
+        resolve: {
+            title: function(Main){
+                Main.setTitle('My Stacks');                
+            }
+        }
     });
 }])
 
-.controller('MyStacksController', ['callApi', '$http', '$location', function(callApi, $http, $location) {
+.controller('MyStacksController', ['callApi', '$http', '$location', '$scope', function(callApi, $http, $location, $scope) {
     //@todo get stacks from API...                
-   // callApi.getStacks();
+    callApi.getStacks();
     
-    this.myStacks={};
-    var mStackcrtl = this;
-    $http.get('data/data-results-a.json').success (function(data){
-            mStackcrtl.myStacks=data;
-    });
+    this.myStacks= callApi.state.mystacks;
+    var mSCtrl = this;
+    $scope.$watch(
+        function(){ return callApi.state.mystacks },
+    
+        function(newVal) {
+            mSCtrl.myStacks = newVal;
+        },
+        true
+    );
     
     this.openStack= function(stackid){
         $location.path("/stack_edit/"+stackid);

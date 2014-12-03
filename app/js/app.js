@@ -14,9 +14,9 @@ var LTBApp = angular.module('LTBApp', [
     'ui.sortable',
     'textAngular',
     'ng.deviceDetector'
-    ]);
+    ])
 
-LTBApp.run(function (gettextCatalog) {
+.run(function (gettextCatalog) {
     //todo: dynamic language setting
     //see: https://angular-gettext.rocketeer.be/dev-guide/
     var lang = 'en';
@@ -24,9 +24,17 @@ LTBApp.run(function (gettextCatalog) {
     gettextCatalog.setCurrentLanguage(lang);
     gettextCatalog.loadRemote("languages/" + lang + ".json");
     gettextCatalog.debug = true;
-});
+})
 
-LTBApp.config(['$routeProvider', function($routeProvider) {  
+.factory('Main', function() {
+   var title = 'default';
+   return {
+     title: function() { return title; },
+     setTitle: function(newTitle) { title = newTitle }
+   };
+})
+
+.config(['$routeProvider', function($routeProvider) {  
     $routeProvider.when('/access_token=:accessToken', {
       template: '',
       controller: function ($location, AccessToken) {
@@ -38,37 +46,25 @@ LTBApp.config(['$routeProvider', function($routeProvider) {
     });
     
     $routeProvider.when('/', {
-        templateUrl:'modules/home/home.html'
+        templateUrl:'modules/home/home.html',
+        resolve: {
+            title: function(Main){
+                Main.setTitle('Home');                
+            }
+        }
     });
 
     $routeProvider.otherwise({
         redirectTo: '/'
     });
-}]);
+}])
 
-LTBApp.controller('defaultController', ['callApi', function(callApi){
+.controller('MainController', ['callApi', 'Main', function(callApi, Main){
+   this.apisettings = callApi.apisettings;
+   this.Main = Main;
+}])
+
+.controller('defaultController', ['callApi', function(callApi){
    this.apisettings = callApi.apisettings;
 }]);
-
-
-
-/*LTBApp.directive('searchhhBar', function(){
-    return {
-        restrict:'A',
-        templateUrl:"../searchBarStacks.html",
-        controller:function(){
-            $scope.text_controller = '';
-            $scope.results={};
-            $scope.aux='helloo';
-            $scope.setSearchText = function(text_to_search){
-                $scope.text_controller = text_to_search;
-
-                $http.get('data/data-results-a.json').success (function(data){
-                    $scope.results=data;
-                    $scope.aux='bye';
-                });
-            };
-        },
-        controllerAs:'searchBar'
-    };
-});*/   
+   
