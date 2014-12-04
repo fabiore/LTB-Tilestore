@@ -14,11 +14,13 @@ var tileTypes = angular.module('LTBApp.tileTypes', [])
             tiletemplate: "="
         },
         link: function(scope, element, attrs){
-            element.html('<div  ><ng-include src="TileCtrl.tileTemplateUrl()"/></div>').show();
-            
-            var div = element.find('div');
-            div.attr('ng-controller',scope.tiletype+'TileController as TileCtrl');
-            $compile(element.contents())(scope);
+            if(scope.tiletype){
+                element.html('<div  ><ng-include src="TileCtrl.tileTemplateUrl()"/></div>').show();
+
+                var div = element.find('div');
+                div.attr('ng-controller',scope.tiletype+'TileController as TileCtrl');
+                $compile(element.contents())(scope);
+            }
         }
     };
 }])
@@ -145,12 +147,14 @@ var tileTypes = angular.module('LTBApp.tileTypes', [])
     );
     
     this.tileTypeTemplateUrl = function(what) {
-        if(what === 'prop'){
-            return 'components/tile-types/' + this.selectedTile.type + '/prop.html';
-        }else if(what === 'settings'){
-            return 'components/tile-types/' + this.selectedTile.type + '/settings.html';
-        }else if(what === 'full'){
-            return 'components/tile-types/' + this.selectedTile.type + '/full.html';
+        if(this.selectedTile.type){
+            if(what === 'prop'){
+                return 'components/tile-types/' + this.selectedTile.type + '/prop.html';
+            }else if(what === 'settings'){
+                return 'components/tile-types/' + this.selectedTile.type + '/settings.html';
+            }else if(what === 'full'){
+                return 'components/tile-types/' + this.selectedTile.type + '/full.html';
+            }
         }
     };
 }])
