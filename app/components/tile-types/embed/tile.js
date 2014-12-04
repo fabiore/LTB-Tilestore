@@ -62,7 +62,7 @@ tileTypes
 }])
 
 .controller('embedMenuController', ['callApi', 'tileState', '$sce', function(callApi, tileState, $sce){
-    this.url = tileState.selectedTile.settings.url;
+    this.url = angular.copy(tileState.selectedTile.settings.url);
     this.selectedTile = tileState.selectedTile;
     
     this.tileDelete = function (){
@@ -72,6 +72,7 @@ tileTypes
         
     };
     
+    var MCtrl = this;
     this.findEmbed = function(url, width, height, success, fail){
         var url = this.url;
         var width = 220;
@@ -81,6 +82,7 @@ tileTypes
         
         callApi.get(callApi.apisettings.apiembed+urlstr, function(data){
             tileState.selectedTile.settings = data._embedded.embed[0];
+            tileState.selectedTile.settings.url = tileState.selectedTile.settings.url || MCtrl.url;
             tileState.selectedTile.name = data._embedded.embed[0].title;  
         });
     };
