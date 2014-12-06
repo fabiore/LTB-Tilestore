@@ -1,0 +1,544 @@
+{
+    "stack": "startstack",
+    "stackid": 1,
+    "description": "test stack",
+    "creator": {
+        "username": "Andy",
+        "userid": 2
+    },
+    "createdate": "2014-10-14 10:15:03",
+    "version": 1,
+    "copyof": 0,
+    "tags": [
+        "learning",
+        "tiles"
+    ],
+    "authors": [
+        {
+            "username": "Andy",
+            "userid": 2
+        },
+        {
+            "username": "Raymond",
+            "userid": 1
+        }
+    ],
+    "startscreen": 1,
+    "screens": [
+        {
+            "id": 1,
+            "name": "Start screen",
+           "tiles":
+            [
+                {
+                    "size": "double-down",
+                    "colour" : "red",
+                    "icon": "book",
+                    "name": "Information",
+                    "type" : "content",
+                    "settings" : 
+                        {
+                            "html": "information.html",
+                            "number": "46"
+                        }
+                },
+                {
+                    "size": "normal",
+                    "colour" : "red",
+                    "icon": "group",
+                    "name": "My Network",
+                    "type" : "content",
+                    "settings" : 
+                        {
+                            "html": "friends-list.html",
+                            "number": "4"
+                        }
+                },
+                {
+                    "size": "normal",
+                    "colour" : "red",
+                    "icon": "",
+                    "name": "Social",
+                    "type" : "content",
+                    "settings" : 
+                        {
+                            "html": "socialmedia.html",
+                            "number": "12"
+                        }
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Information",
+            "img": "fa fa-book",
+            "tiles":[
+                {
+                    "tile": "tile double bg-red",
+                    "name": "Click here to search",
+                    "html": "search.html",
+                    "typebody": 1,
+                    "img": "fa fa-search",
+                    "number": "",
+                    "position": 1
+                },
+                {
+                    "tile": "tile bg-red",
+                    "name": "Recent Searches",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-list",
+                    "number": "",
+                    "position": 2
+                },
+                {
+                    "tile": "tile bg-blue",
+                    "name": "Recommendations",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-arrow-circle-o-right",
+                    "number": "",
+                    "position": 3
+                },
+                {
+                    "tile": "tile bg-green",
+                    "name": "Health & Safety",
+                    "html": "first-aid.html",
+                    "typebody": 1,
+                    "img": "fa fa-shield",
+                    "number": "",
+                    "position": 4,
+                    "_screenid": 3,
+                    "_type": "_navigate"
+                },
+                {
+                    "tile": "tile bg-red",
+                    "name": "Home",
+                    "html": "index.html",
+                    "typebody": 1,
+                    "img": "fa fa-home",
+                    "number": "",
+                    "position": 5,
+                     "_screenid": 1,
+                    "_type": "_navigate"                    
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Health & Safety",
+            "img": "first-aid.html",
+            "tiles":[
+                {
+                    "tile": "tile bg-purple",
+                    "name": "Head Injury",
+                    "html": "head-injury.html",
+                    "typebody": 1,
+                    "img": "fa fa-headphones",
+                    "number": "",
+                    "position": 1,
+                    "_screenid": 4,
+                    "_type": "_navigate"
+                },
+                {
+                    "tile": "tile bg-purple",
+                    "name": "Back Injury",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-exclamation",
+                    "number": "",
+                    "position": 2
+                },
+                {
+                    "tile": "tile bg-purple",
+                    "name": "Fall Injury",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-arrow-down",
+                    "number": "",
+                    "position": 3
+                },
+                {
+                    "tile": "tile bg-purple",
+                    "name": "Burn Injury",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-fire",
+                    "number": "",
+                    "position": 4
+                },
+                {
+                    "tile": "tile bg-purple",
+                    "name": "Electrical Injury",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-lightbulb-o",
+                    "number": "",
+                    "position": 5
+                },
+                {
+                    "tile": "tile bg-purple",
+                    "name": "Chemical",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-glass",
+                    "number": "",
+                    "position": 6
+                },
+                {
+                    "tile": "tile bg-purple",
+                    "name": "",
+                    "html": "",
+                    "typebody": 5,
+                    "img": "<br><br><h1> CPR</h1>",
+                    "number": "",
+                    "position": 7
+                },
+                {
+                    "tile": "tile bg-red",
+                    "name": "Get Help",
+                    "html": "dont-panic.html",
+                    "typebody": 5,
+                    "img": "<br/><h1>Don't</h1><br/><h1>Panic</h1>",
+                    "number": "",
+                    "position": 8
+                },
+                {
+                    "tile": "tile bg-red",
+                    "name": "Back to Home",
+                    "html": "index.html",
+                    "typebody": 1,
+                    "img": "fa fa-home",
+                    "number": "",
+                    "position": 9,
+                    "_screenid": 1,
+                    "_type": "_navigate"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Head Injury",
+            "img": "fa fa-headphones",
+            "tiles":[
+                {
+                    "tile": "tile bg-red",
+                    "name": "Back to first aid",
+                    "html": "first-aid.html",
+                    "typebody": 1,
+                    "img": "fa fa-medkit",
+                    "number": "",
+                    "position": 1,
+                    "_screenid": 3,
+                    "_type": "_navigate"
+                },
+                {
+                    "tile": "tile bg-purple",
+                    "name": "Head Injury",
+                    "html": "head-injury.html",
+                    "typebody": 1,
+                    "img": "fa fa-headphones",
+                    "number": "",
+                    "position": 2                 
+                },
+                {
+                    "tile": "tile bg-purple",
+                    "name": "Head Injury 2",
+                    "html": "head-injury.html",
+                    "typebody": 1,
+                    "img": "fa fa-headphones",
+                    "number": "",
+                    "position": 3                      
+                },
+                {
+                    "tile": "tile bg-red",
+                    "name": "Back to Home",
+                    "html": "index.html",
+                    "typebody": 1,
+                    "img": "fa fa-home",
+                    "number": "",
+                    "position": 4,
+                    "_screenid": 1,
+                    "_type": "_navigate"                
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "My Network",
+            "img": "fa fa-group",
+            "tiles":[ 
+                {
+                    "tile": "tile double bg-red",
+                    "name": "Vice-President, Fern-University Hagen",
+                    "html": "profile.html",
+                    "typebody": 5,
+                    "img": "<img src=\"assets_ltb/img/profile/profile-1.jpg\" width=\"70px\" height=\"70px\" alt=\"\"><h4>Andy Tarracó</h4><p>Easily style icon color, size, shadow, and anything that's possible with CSS.</p>",
+                    "number": "",
+                    "position": 1
+                },
+                {
+                    "tile": "tile double bg-red",
+                    "name": "Business Administration",
+                    "html": "profile2.html",
+                    "typebody": 5,
+                    "img": "<img src=\"assets_ltb/img/profile/profile-2.jpeg\" width=\"70px\" height=\"70px\" alt=\"\"><h4> Graham Attwell</h4><p>Easily style icon color, size, shadow, and anything that's possible with CSS.</p>",
+                    "number": "",
+                    "position": 2
+                },
+                {
+                    "tile": "tile double bg-red",
+                    "name": "External Consultant",
+                    "html": "profile3.html",
+                    "typebody": 5,
+                    "img": "<img src=\"assets_ltb/img/profile/profile-3.jpg\" width=\"70px\" height=\"70px\" alt=\"\"><h4>Allison Sanders</h4><p>Easily style icon color, size, shadow, and anything that's possible with CSS.</p>",
+                    "number": "",
+                    "position": 3
+                },
+                {
+                    "tile": "tile double bg-red",
+                    "name": "R&D Project Coordinator",
+                    "html": "profile4.html",
+                    "typebody": 5,
+                    "img": "<img src=\"assets_ltb/img/profile/profile-4.png\" width=\"70px\" height=\"70px\" alt=\"\"><h4>Tor-Arne Bellika</h4><p>Easily style icon color, size, shadow, and anything that's possible with CSS.</p>",
+                    "number": "",
+                    "position": 4
+                }
+            ]           
+        },
+        {
+            "id": 6,
+            "name": "Social",
+            "img": "assets_ltb/img/social-button.png",
+            "tiles":[ 
+                {
+                    "tile": "tile bg-red",
+                    "name": "Facebook",
+                    "html": "https://www.facebook.com",
+                    "typebody": 1,
+                    "img": "fa fa-facebook",
+                    "number": "",
+                    "position": 1
+                },
+                {
+                    "tile": "tile bg-red",
+                    "name": "LinkedIn",
+                    "html": "https://www.linkedin.com",
+                    "typebody": 1,
+                    "img": "fa fa-linkedin",
+                    "number": "",
+                    "position": 2
+                },
+                {
+                    "tile": "tile bg-red",
+                    "name": "Twitter",
+                    "html": "https://www.twitter.com",
+                    "typebody": 1,
+                    "img": "fa fa-twitter",
+                    "number": "",
+                    "position": 3
+                },
+                {
+                    "tile": "tile bg-red",
+                    "name": "Home",
+                    "html": "index.html",
+                    "typebody": 1,
+                    "img": "fa fa-home",
+                    "number": "",
+                    "position": 4,
+                    "_screenid": 1,
+                    "_type": "_navigate"                    
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "name": "collections",
+            "img": "fa fa-magic",
+            "tiles":[
+                {
+                    "tile": "tile double bg-red",
+                    "name": "Create New",
+                    "html": "createNew.html",
+                    "typebody": 1,
+                    "img": "fa fa-briefcase",
+                    "number": "",
+                    "position": 1
+                },
+                {
+                    "tile": "tile bg-red",
+                    "name": "Home",
+                    "html": "index.html",
+                    "typebody": 1,
+                    "img": "fa fa-home",
+                    "number": "",
+                    "position": 2,
+                    "_screenid": 1,
+                    "_type": "_navigate"                    
+                },
+                {
+                    "tile": "tile bg-red",
+                    "name": "Recent collections",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-list",
+                    "number": "",
+                    "position": 3
+                },
+                {
+                    "tile": "tile double bg-blue",
+                    "name": "Recommendations",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-arrow-circle-o-right",
+                    "number": "",
+                    "position": 4
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "name": "stuwa",
+            "img": "ST&#220WA",
+            "tiles":[
+                {
+                    "tile": "tile double bg-red",
+                    "name": "Camera",
+                    "html": "startScan();",
+                    "typebody": 7,
+                    "img": "fa fa-camera",
+                    "number": "",
+                    "position": 1                   
+                },
+                {
+                    "tile": "tile double bg-red",
+                    "name": "Filterkies",
+                    "html": "options-learning.html",
+                    "typebody": 1,
+                    "img": "fa fa-cogs",
+                    "number": "",
+                    "position": 2,
+                    "_screenid": 10,
+                    "_type": "_navigate"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "name": "suggestions",
+            "img": "fa fa-comment-o",
+            "tiles":[
+                {
+                    "tile": "tile double bg-red",
+                    "name": "Make a Suggestion",
+                    "html": "new-suggestion.html",
+                    "typebody": 1,
+                    "img": "fa fa-comment-o",
+                    "number": "",
+                    "position": 1
+                },
+                {
+                    "tile": "tile bg-red",
+                    "name": "My Suggestions",
+                    "html": "list-my-suggestions.html",
+                    "typebody": 1,
+                    "img": "fa fa-list",
+                    "number": "",
+                    "position": 2
+                },
+                {
+                    "tile": "tile bg-red",
+                    "name": "Home",
+                    "html": "index.html",
+                    "typebody": 1,
+                    "img": "fa fa-home",
+                    "number": "",
+                    "position": 3,
+                    "_screenid": 1,
+                    "_type": "_navigate"                    
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Filterkies",
+            "img": "fa fa-cogs",
+            "tiles":[
+               {
+                    "tile": "tile double bg-red",
+                    "name": "Learning",
+                    "html": "swipe.html",
+                    "typebody": 1,
+                    "img": "fa fa-pencil-square-o",
+                    "number": "",
+                    "position": 1
+                },
+                {
+                    "tile": "tile bg-red",
+                    "name": "Graphics",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-signal",
+                    "number": "",
+                    "position": 2
+                },
+                {
+                    "tile": "tile bg-red",
+                    "name": "Videos",
+                    "html": "swipe-videos.html",
+                    "typebody": 1,
+                    "img": "fa fa-youtube-play",
+                    "number": "",
+                    "position": 3
+                },
+                {
+                    "tile": "tile double bg-red",
+                    "name": "Calculator",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-superscript",
+                    "number": "",
+                    "position": 4
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "name": "suggestions",
+            "img": "fa fa-comment-o",
+            "tiles":[
+                {
+                    "tile": "tile bg-green",
+                    "name": "Health & Safety",
+                    "html": "first-aid.html",
+                    "typebody": 1,
+                    "img": "fa fa-shield",
+                    "number": "",
+                    "position": 4,
+                    "_screenid": 3,
+                    "_type": "_navigate"                    
+                },
+                {
+                    "tile": "tile bg-blue",
+                    "name": "Something Broke!",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-exclamation",
+                    "number": "",
+                    "position": 2                    
+                },
+                {
+                    "tile": "tile bg-red",
+                    "name": "Back to Home",
+                    "html": "index.html",
+                    "typebody": 1,
+                    "img": "fa fa-home",
+                    "number": "",
+                    "position": 3,
+                    "_screenid": 1,
+                    "_type": "_navigate" 
+                }
+            ]            
+        }
+    ]
+}

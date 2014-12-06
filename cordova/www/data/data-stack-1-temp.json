@@ -1,0 +1,251 @@
+{
+    "stack": "startstack",
+    "stackid": 1,
+    "description": "test stack",
+
+    "creator": {
+        "username": "Andy",
+        "userid": 2
+        },
+
+    "createdate": "2014-10-14 10:15:03",
+    "version": 1,
+    "copyof": 0,
+
+    
+    "tags": [
+        "learning",
+        "tiles"
+    ],
+
+    "authors": [
+        {
+            "username": "Andy",
+            "userid": 2
+        },
+        {
+            "username": "Raymond",
+            "userid": 1
+        }
+
+    ],
+
+    "startscreen": 1,
+    "screens":
+    [
+
+        {
+            "id": 1,
+            "name": "_start",
+            "img": "_stackpic",
+
+
+            "tiles":
+            [
+                {
+                    "tile": "tile double-down bg-red",
+                    "size": "double-down",
+                    "colour" : "red",
+                    "icon": "book",
+                    "name": "Information",
+                    "html": "information.html",
+                    "typebody": 1,
+                    "img": "fa fa-book",
+                    "number": "46",
+                    "position": 1,
+                    "_screenid": 2,
+                    "_type": "_navigate"
+                },
+
+
+
+
+
+
+                {
+                    "tile": "tile bg-purple",
+                    "size": "",
+                    "colour" : "purple",
+                    "icon": "cogs",
+                    "name": "Settings",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-cogs",
+                    "number": "",
+                    "position": 11
+                },
+                {
+                    "tile": "tile double bg-red",
+                    "size": "double",
+                    "colour" : "red",
+                    "icon": "envelope",
+                    "name": "Send me a letter",
+                    "html": "",
+                    "typebody": 6,
+                    "img": "<h4>engraf@bau-abc-rostrup.de</h4><p>Re: Learning Toolbox v0.5</p><p>1 April 2014 12:30PM confirmed for the project plan update meeting...</p>",
+                    "number": "14",
+                    "position": 12
+                }
+
+
+            ]
+
+        },
+
+
+
+        {
+            "id": 2,
+            "name": "Information",
+            "img": "fa fa-book",
+
+            "tiles":[
+                {
+                    "tile": "tile double bg-red",
+                    "name": "Click here to search",
+                    "html": "search.html",
+                    "typebody": 1,
+                    "img": "fa fa-search",
+                    "number": "",
+                    "position": 1
+                },
+                {
+                    "tile": "tile bg-red",
+                    "name": "Recent Searches",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-list",
+                    "number": "",
+                    "position": 2
+                },
+                {
+                    "tile": "tile bg-blue",
+                    "name": "Recommendations",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-arrow-circle-o-right",
+                    "number": "",
+                    "position": 3
+                },
+                {
+                    "tile": "tile bg-green",
+                    "name": "Health & Safety",
+                    "html": "first-aid.html",
+                    "typebody": 1,
+                    "img": "fa fa-shield",
+                    "number": "",
+                    "position": 4,
+                    "_screenid": 3,
+                    "_type": "_navigate"
+                },
+                {
+                    "tile": "tile bg-red",
+                    "name": "Home",
+                    "html": "index.html",
+                    "typebody": 1,
+                    "img": "fa fa-home",
+                    "number": "",
+                    "position": 5
+                }
+
+            ]
+
+        },
+
+
+
+
+
+
+        {
+            "id": 3,
+            "name": "Health & Safety",
+            "img": "first-aid.html",
+
+            "tiles":[
+
+                {
+                    "tile": "tile bg-purple",
+                    "name": "Head Injury",
+                    "html": "head-injury.html",
+                    "typebody": 1,
+                    "img": "fa fa-headphones",
+                    "number": "",
+                    "position": 1,
+                    "_screenid": 4,
+                    "_type": "_navigate"
+
+                },
+                {
+                    "tile": "tile bg-purple",
+                    "name": "Back Injury",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-exclamation",
+                    "number": "",
+                    "position": 2
+                },
+                {
+                    "tile": "tile bg-purple",
+                    "name": "Fall Injury",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-arrow-down",
+                    "number": "",
+                    "position": 3
+                },
+                {
+                    "tile": "tile bg-purple",
+                    "name": "Burn Injury",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-fire",
+                    "number": "",
+                    "position": 4
+                },
+                {
+                    "tile": "tile bg-purple",
+                    "name": "Electrical Injury",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-lightbulb-o",
+                    "number": "",
+                    "position": 5
+                },
+                {
+                    "tile": "tile bg-purple",
+                    "name": "Chemical",
+                    "html": "",
+                    "typebody": 1,
+                    "img": "fa fa-glass",
+                    "number": "",
+                    "position": 6
+                },
+                {
+                    "tile": "tile bg-purple",
+                    "name": "",
+                    "html": "",
+                    "typebody": 5,
+                    "img": "<br><br><h1> CPR</h1>",
+                    "number": "",
+                    "position": 7
+                },
+                {
+                    "tile": "tile bg-red",
+                    "name": "Get Help",
+                    "html": "dont-panic.html",
+                    "typebody": 5,
+                    "img": "<br/><h1>Don't</h1><br/><h1>Panic</h1>",
+                    "number": "",
+                    "position": 8
+                }
+
+
+            ]
+
+
+        }
+
+    ]
+
+}

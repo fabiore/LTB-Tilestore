@@ -1,0 +1,56 @@
+<div class="container-tiles" fade-i style="margin-top:30px">
+    <a href="#/my-stacks" >
+        <div class="tiles-emulate tiles-emulate-white" style="height:100%; width:100%; margin-top:40px; padding:0 0 0 0; margin-bottom:5px">
+            <div class="tile-emulate tile-emulate-red" style="height:200px; width:800px; margin-bottom:0px">
+                <div class="tile-emulate-body"style="margin-top:40px">
+                    <i class="fa fa-briefcase" style="font-size:100px"></i>
+                </div>
+                <div class="tile-emulate-object" >
+                    <div class="name" style="font-size:30px; margin-bottom:20px">
+                        My Stacks
+                    </div>
+                    <div class="number" style="font-size:30px; margin-bottom:20px">
+                        2
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <a href="#/tile-store">
+        <div class="tiles-emulate tiles-emulate-white" style="height:100%; width:100%; padding:0 0 0 0">
+            <div class="tile-emulate tile-emulate-red" style="height:200px; width:800px">
+                <div class="tile-emulate-body" style="margin-top:40px">
+                    <i class="fa fa-shopping-cart" style="font-size:100px"></i>
+                </div>
+                <div class="tile-emulate-object" >
+                    <div class="name" style="font-size:30px; margin-bottom:20px">
+                        Tile Store
+                    </div>
+                    <div class="number" style="font-size:30px; margin-bottom:20px">
+                        2
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+
+<!-- Notifications 
+<div class="col-md6" style="padding-top:5px; padding-bottom:0px;">
+                <h1>
+                    My Tiles
+                </h1>
+        </div>
+        <div class="col-md6" style="padding-top:5px; padding-bottom:0px;">
+                <h1>
+                    My Stacks
+                </h1>
+        </div>
+        <div class="col-md12 jumbotron" style="padding-top:5px; padding-bottom:0px;">
+            <div style="padding-bottom: 1em;" class="pull-right">
+            </div>
+                <img ng-src="resources/logo_LTB.png" width="80px" height="80px">
+                <h1>Tile Store</h1>
+        </div>
+-->
+<div noty ng-repeat="n in notifications"/>

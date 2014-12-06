@@ -12,6 +12,7 @@
     "grunt-contrib-nodeunit": "~0.4.1",
     "grunt-contrib-uglify": "~0.5.0",
     "grunt-angular-gettext": "^0.2.15",
+    "grunt-contrib-copy": "0.7.0",
     "http-server": "^0.6.1",
     "karma": "~0.10",
     "karma-junit-reporter": "^0.2.2",

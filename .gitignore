@@ -6,3 +6,7 @@ tmp
 .DS_Store
 .idea
 /nbproject/private/
+/mob/www/LTB-dependencies/
+/mob/www/
+/cordova/plugins/
+/cordova/platforms/

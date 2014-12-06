@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="LTBApp" ng-controller="MainController as MainCtrl" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="LTBApp" ng-controller="MainController as MainCtrl" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="LTBApp" ng-controller="MainController as MainCtrl" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="LTBApp" ng-controller="MainController as MainCtrl" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tile Store</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">  
+    <link rel="stylesheet" href="assets/css/tiles_responsive.css">
+    <link rel="stylesheet" href="assets/css/menu.css">
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css">
+    <!--<link rel='stylesheet' href='bower_components/textAngular/src/textAngular.css'>-->
+    <script src="components/tile-types/tile-types-css.js"></script>
+    
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
+
+    
+    <script src="js/app.js"></script>
+
+</head>
+<body>
+    <!-- bootstrap navbar -->
+    <div ng-include="'assets/navbar-top.html'"></div>
+    
+    <!-- ng routes hook -->
+    <div ng-view></div>
+
+    <!-- footer -->
+    <div ng-include="'assets/navbar-bottom.html'"></div>
+
+
+        
+    <!-- In production use:
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+    -->
+    
+    <script src="bower_components/ngstorage/ngStorage.js"></script>
+    <script src="bower_components/oauth-ng/dist/oauth-ng.js"></script>
+    <script src="bower_components/angular-gettext/dist/angular-gettext.min.js"></script>
+    <script src="bower_components/angular-ui-sortable/sortable.min.js"></script>
+    
+    <!--<script src='bower_components/textAngular/dist/textAngular-rangy.min.js'></script>-->
+    <script src='bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
+    <script src='bower_components/textAngular/dist/textAngular.min.js'></script>
+    <script src='bower_components/ng-device-detector/ng-device-detector.js'></script>
+    
+    <script src="modules/tileStore/tileStore.js"></script>
+    <script src="modules/view1/view1.js"></script>
+    <script src="modules/stack/stack.js"></script>
+    <script src="modules/stack_details/stack_details.js"></script>
+    <script src="modules/myStacks/myStacks.js"></script>
+    <script src="components/ltb-api/ltb-api.js"></script>
+    <script src="components/tile-types/tile-types.js"></script>
+    <script src="components/filters/filters.js"></script>
+    <script src="components/version/version.js"></script>
+    <script src="components/version/version-directive.js"></script>
+    <script src="components/version/interpolate-filter.js"></script>    
+    
+    
+</body>
+</html>

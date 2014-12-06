@@ -22,6 +22,6 @@
     "angular-ui-sortable": "*",
     "textAngular": "*",
     "ng-device-detector": "*",
-    "ngCordova": "*"
+    "ngCordova": "https://github.com/raymondelferink/ng-cordova.git#master"
   }
 }

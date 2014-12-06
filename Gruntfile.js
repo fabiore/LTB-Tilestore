@@ -7,6 +7,18 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         //pkg: grunt.file.readJSON('package.json'),
+        copy: {
+            mob: {
+                files: [
+                    {
+                        cwd: 'app',  // set working folder / root to copy
+                        src: '**/*',           // copy all files and subfolders
+                        dest: 'cordova/www',    // destination folder
+                        expand: true           // required when using cwd
+                    }
+                ]
+            }
+        },
         nggettext_extract: {
             pot: {
                 files: {
@@ -36,5 +48,9 @@ module.exports = function (grunt) {
         }
     });
     grunt.loadNpmTasks('grunt-angular-gettext');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.registerTask('gettext');
+    grunt.registerTask('copy-cordova', function(target) {
+        grunt.task.run('copy');
+    });
 };
