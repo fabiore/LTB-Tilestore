@@ -24,14 +24,16 @@ tileTypes
     }
     );
 }])
-//.controller('qrcodeTileController', ["tileState", "callApi", "$scope", "$cordovaBarcodeScanner", function (tileState, callApi, $scope, $cordovaBarcodeScanner) {
-.controller('qrcodeTileController', ["tileState", "callApi", "$scope", function (tileState, callApi, $scope) {
+
+.controller('qrcodeTileController', ["tileState", "callApi", "$scope", "$cordovaBarcodeScanner", function (tileState, callApi, $scope, $cordovaBarcodeScanner) {
+//.controller('qrcodeTileController', ["tileState", "callApi", "$scope", function (tileState, callApi, $scope) {
                 //make sure the inserted tile is not a template
     if(!$scope.tiletemplate && callApi.state.tiles[$scope.tileindex].template){
         callApi.state.tiles[$scope.tileindex] = callApi.state.tiles[$scope.tileindex].template;
         $scope.tile = callApi.state.tiles[$scope.tileindex];
     }
     this.tileEdit = function ($event) {
+        console.log('edit');
         tileState.tileEdit($event, $scope.tile, $scope.tileindex);
     };
     
@@ -39,19 +41,19 @@ tileTypes
        return  "components/tile-types/qrcode/tile.html";
     };
     
-//    this.scanQR = function() {
-//        $cordovaBarcodeScanner.scan(
-//                function (result) {
-//                    alert("We got a barcode\n" +
-//                        "Result: " + result.text + "\n" +
-//                        "Format: " + result.format + "\n" +
-//                        "Cancelled: " + result.cancelled);
-//                }, 
-//                function (error) {
-//                    alert("Scanning failed: " + error);
-//            }
-//        );
-//    };
+    this.scanQR = function() {
+        $cordovaBarcodeScanner.scan(
+                function (result) {
+                    alert("We got a barcode\n" +
+                        "Result: " + result.text + "\n" +
+                        "Format: " + result.format + "\n" +
+                        "Cancelled: " + result.cancelled);
+                }, 
+                function (error) {
+                    alert("Scanning failed: " + error);
+            }
+        );
+    };
     
 }])
 

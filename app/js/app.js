@@ -13,7 +13,8 @@ var LTBApp = angular.module('LTBApp', [
     'gettext',
     'ui.sortable',
     'textAngular',
-    'ng.deviceDetector'
+    'ng.deviceDetector',
+    'ngCordova'
     ])
 
 .run(function (gettextCatalog) {
