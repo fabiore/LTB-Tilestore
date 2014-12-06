@@ -6,10 +6,12 @@
 .tiles {
   /* margin-right: -5%; */
   /* padding: 5% 0 0 5%; */
-  /* width:258px; */
-  /* height:355px; */
-height: 500px;
-width: 249px;
+  width: auto;
+  height: auto;
+
+  /* height: 500px; */
+
+  /* width: 249px; */
   overflow: scroll;
   
 }
