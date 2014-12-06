@@ -7,7 +7,7 @@ tileTypes
     {
         size: "",
         colour: "red",
-        icon: "camera",
+        icon: "qrcode",
         type: "qrcode",
         name: "QR Decode",
         description: "Open camera for decode qrcode",
@@ -15,7 +15,7 @@ tileTypes
             size: "",
             colour: "red",
             name: "QR Decode",
-            icon: "camera",
+            icon: "qrcode",
             position: 0,
             settings: {},
             type: "qrcode"
