@@ -37,7 +37,7 @@ tileTypes
     this.tileTemplateUrl = function(){
        return  "components/tile-types/app/tile.html";
     };
-
+    
 }])
 
 .controller('appMenuController', ['callApi', 'tileState', function(callApi, tileState){
