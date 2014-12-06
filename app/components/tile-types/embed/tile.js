@@ -52,6 +52,16 @@ tileTypes
 .controller('embedFullController', ['tileState', '$sce', function(tileState, $sce){
         
     this.tile = tileState.selectedTile;
+    this.content_class = '';
+    this.content_extra = '';
+    
+    if (this.tile.settings.type === 'video' || this.tile.settings.type === 'rich'){
+        // Figure out the percent ratio for the padding. This is (height/width) * 100
+        var ratio = ((this.tile.settings.height/this.tile.settings.width)*100).toPrecision(4) + '%';
+        this.content_class = 'embed-responsive-object';
+        this.content_extra = ' style="paddingBottom: '+ratio+';" ';
+    }
+    
     
     //@todo: remove str.replace fix below when embed api is updated to support 'scheme'
     this.tile.settings.htmlSafe = $sce.trustAsHtml(this.tile.settings.html.replace('src=\"//cdn.embed', 'src=\"http://cdn.embed'));
@@ -75,7 +85,7 @@ tileTypes
     var MCtrl = this;
     this.findEmbed = function(url, width, height, success, fail){
         var url = this.url;
-        var width = 220;
+        var width = '';//220;
         var height = '';
         
         var urlstr = "?url="+encodeURIComponent(url)+"&width="+width+"&height="+height+'&scheme='+callApi.device.scheme;

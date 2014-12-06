@@ -2,13 +2,16 @@
     Created on : 4-dec-2014, 18:46:44
     Author     : Raymond
 */
-
+.tile-embed{
+    min-height: 50px !important;
+}
 .embed-responsive-object {
   position: relative;
   padding-bottom: 67.5%;
   height: 0;
-  margin: 10px 0;
+  margin: 40px 0;
   overflow: hidden;
+  background-color: #000;
 }
 .embed-responsive-object iframe,
   .embed-responsive-object object,
