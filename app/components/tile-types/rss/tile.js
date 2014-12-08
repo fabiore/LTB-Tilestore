@@ -40,8 +40,10 @@ tileTypes
     };
     
     this.tileClick = function ($event) {
-       tileState.toggleSelect($event, 'off');
-       tileState.setTile($scope.tile, 'full', $scope.tileindex);
+        if(!$scope.tiletemplate){
+            tileState.toggleSelect($event, 'off');
+            tileState.setTile($scope.tile, 'full', $scope.tileindex);
+        }
     };
     
     this.tileTemplateUrl = function(){

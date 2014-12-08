@@ -39,9 +39,11 @@ tileTypes
     };
     
     this.tileClick = function ($event) {
-       tileState.toggleSelect($event, 'off');
-       tileState.setTile($scope.tile, "full", $scope.tileindex);
-//       tileState.fullscreen = true;
+       if(!$scope.tiletemplate){
+            tileState.toggleSelect($event, 'off');
+            tileState.setTile($scope.tile, "full", $scope.tileindex);
+     //       tileState.fullscreen = true;
+       }
     };
     
     this.tileTemplateUrl = function(){

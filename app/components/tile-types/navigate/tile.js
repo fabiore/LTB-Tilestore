@@ -38,8 +38,10 @@ tileTypes
     
         
     this.tileClick = function ($event) {
-       tileState.setTile();
-       callApi.getTiles($scope.tile.settings.target);
+        if(!$scope.tiletemplate){
+            tileState.setTile();
+            callApi.getTiles($scope.tile.settings.target);
+        }
     };
     
     this.tileTemplateUrl = function(){

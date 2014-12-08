@@ -11,7 +11,8 @@ var tileTypes = angular.module('LTBApp.tileTypes', [])
             tiletype: '=',
             tile: '=',
             tileindex: '=',
-            tilereadonly: "="
+            tilereadonly: "=",
+            tiletemplate: "="
         },
         link: function(scope, element, attrs){
             if(scope.tiletype){

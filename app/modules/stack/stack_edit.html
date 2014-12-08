@@ -14,7 +14,7 @@
                 <div class="panel-heading"><h4>Tiles:</h4></div>
                 <div class="fake">
                 <div ui-sortable="StackCtrl.sortableOptions" class="tiles tiletypes" ng-model="StackCtrl.alltemplates">
-                    <tile ng-repeat="template in StackCtrl.alltemplates" tiletype="template.type" tilereadonly="true" tile='template' tileindex="$index" class="tile {{template.size}} tile-{{template.colour}}"></tile>
+                    <tile ng-repeat="template in StackCtrl.alltemplates" tiletype="template.type" tilereadonly="true" tiletemplate="true" tile='template' tileindex="$index" class="tile {{template.size}} tile-{{template.colour}}"></tile>
                 </div>
                 </div>
                 

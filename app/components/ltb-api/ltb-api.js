@@ -38,7 +38,6 @@ angular.module('ltbapi', [])
         raw: deviceDetector.raw,
         scheme: window.location.protocol || 'http'
     };
-    console.log(this.device);
     
 //  API SETTINGS:  
 //  apisettings = global settings
