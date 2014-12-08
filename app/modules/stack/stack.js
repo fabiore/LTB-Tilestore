@@ -42,6 +42,14 @@ angular.module('LTBApp.stack', ['ngRoute','ui.bootstrap'])
     
     var Stackctrl = this;
     var stackid = $routeParams.stackid || 1;
+    $.mCustomScrollbar.defaults.scrollButtons.enable=true; //enable scrolling buttons by default
+    
+//    this.makesliders = function(){
+//        $("#scrollArea").mCustomScrollbar({
+//            axis: 'xy',
+//            theme: 'minimal'
+//        });
+//    }
     
     this.thetiletype = 'default';
     
