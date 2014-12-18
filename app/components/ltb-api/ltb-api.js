@@ -21,7 +21,10 @@ angular.module('ltbapi', [])
     }
 )
 
-.service('callApi', ["AccessToken", "apisettings", "deviceDetector","$http", "$filter", "$routeParams", function(AccessToken, apisettings, deviceDetector, $http, $filter, $routeParams) {
+.service('callApi', ["AccessToken", "apisettings", "deviceDetector","$http",
+    "$filter", "$routeParams", 
+    function(AccessToken, apisettings, deviceDetector, $http, $filter, 
+        $routeParams) {
     
     this.state = {
         mystacks: {},
@@ -40,8 +43,13 @@ angular.module('ltbapi', [])
     };
     
 //  API SETTINGS:  
-//  apisettings = global settings
+//  apisettings = live server settings for https://api.ltb.io
 //  localsetttings = local settings
+//  To connect to local API:
+//      1. change the assign value below to localsettings and 
+//      2. change the parameter apisettings of this function also to localsettings
+//  In the rest of the application the variable apisettings is used and so
+//  that is the one exported here
     this.apisettings = apisettings;
     
     this.headers = function(){
