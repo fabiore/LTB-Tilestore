@@ -48,7 +48,6 @@ angular.module('ltbapi', [])
 //  To connect to local API:
 //      1. change the assign value below to localsettings and 
 //      2. change the parameter apisettings of this function also to localsettings
-//      3. change the string apisettings in the second argument to service to localsettings
 //  In the rest of the application the variable apisettings is used and so
 //  that is the one exported here
     this.apisettings = apisettings;
